@@ -10,10 +10,16 @@
 body {
   font-family: 'Roboto Slab', serif;
   overflow-x: hidden;
+  background-color: var(--bg-color);
+  transition: background-color 0.5s ease-in-out;
 }
 
 .container {
   width: 1210px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+a {
+  text-decoration: none;
 }

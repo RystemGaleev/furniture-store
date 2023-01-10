@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.link {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--detail-color);
+}

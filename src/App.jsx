@@ -1,11 +1,14 @@
 import './assets/scss/App.scss';
+import { ThemeProvider } from './context/ThemeContext';
 import { RouterApp } from './Router/RouterApp';
 
 function App() {
   return (
-    <div className="App">
-      <RouterApp />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <RouterApp />
+      </div>
+    </ThemeProvider>
   );
 }
 

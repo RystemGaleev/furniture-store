@@ -1,4 +1,4 @@
-import { Header } from '../../components/Header';
+import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer';
 
 export const Layout = ({ children }) => {
