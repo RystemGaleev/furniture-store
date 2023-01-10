@@ -1,0 +1,30 @@
+///buttons///
+
+////color ////
+
+$color-white: #fff;
+$color-black: #1b1a1a;
+
+body[data-theme='dark'] {
+  --color-main: #fff;
+}
+
+body[data-theme='light'] {
+  --color-main: white;
+}
+
+.classic {
+  position: relative;
+  min-width: 180px;
+  padding: 0 15px;
+  height: 54px;
+  border: 1px solid $color-black;
+  // font-size: 20px;
+  font-weight: 500;
+  background-color: transparent;
+  cursor: pointer;
+}
+.main {
+}
+.transparent {
+}
