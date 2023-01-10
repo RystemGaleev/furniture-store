@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { Navbar } from '../Navbar/Navbar';
+import { Navbar } from '../../../components/Navbar/Navbar';
 import style from './Header.module.scss';
-import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeContext } from '../../../context/ThemeContext';
 
 import { CiDark, CiLight } from 'react-icons/ci';
 import { Link } from 'react-router-dom';

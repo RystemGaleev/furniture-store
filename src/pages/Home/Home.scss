@@ -1,0 +1,49 @@
+.home {
+  background: url('../../../public/image/bg-main.jpg') center center/cover no-repeat;
+  min-height: 800px;
+  padding-top: 120px;
+  i {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 14px 0 80px;
+    display: inline-block;
+  }
+  &__block {
+    max-width: 500px;
+    margin-left: 50px;
+  }
+
+  &__title {
+    position: relative;
+    font-size: 54px;
+    font-weight: 600;
+    color: #1b1a1a;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -190px;
+      left: -20px;
+      width: 1px;
+      height: 340px;
+      background-color: black;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: -60px;
+      width: 340px;
+      height: 1px;
+      background-color: black;
+    }
+  }
+}
+
+.products {
+  margin-top: 100px;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}

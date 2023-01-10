@@ -14,14 +14,31 @@ body[data-theme='light'] {
   --radius: 6px;
 }
 
+.subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #1b1a1a;
+}
+
 .classic {
   position: relative;
-  min-width: 180px;
+  min-width: 200px;
   padding: 0 15px;
   height: 54px;
-  border: 1px solid black;
+  border: 1px solid #1b1a1a;
+  color: #1b1a1a;
   font-size: 20px;
   font-weight: 500;
   background-color: transparent;
   cursor: pointer;
+  z-index: 5;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    color: #fff;
+    background-color: #1b1a1a;
+  }
+  &:active {
+    transform: scale(1.1);
+  }
 }
