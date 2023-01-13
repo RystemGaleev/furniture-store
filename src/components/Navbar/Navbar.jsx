@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import style from './Navbar.module.scss';
+import { getTotal } from '../../utils';
+import { useSelector } from 'react-redux';
 
 export const Navbar = () => {
+  const { cart } = useSelector((state) => state.cart);
   return (
     <nav className={style.nav}>
       <Link to="/" className={style.link}>
@@ -13,7 +16,7 @@ export const Navbar = () => {
       <Link to="/contact" className={style.link}>
         Contact us
       </Link>
-      <Link to="/cart" className={style.link}>
+      <Link to="/cart" className={style.cart}>
         <svg
           width="28"
           height="28"
@@ -38,6 +41,7 @@ export const Navbar = () => {
             fill="currentColor"
           />
         </svg>
+        <div className={style.quantity}>{getTotal(cart).totalQuantity}</div>
       </Link>
     </nav>
   );

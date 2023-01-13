@@ -1,0 +1,34 @@
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--detail-color);
+}
+.icon {
+  width: 30px;
+  height: 30px;
+}
+.title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.descr {
+  font-size: 18px;
+  font-weight: 500;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: transparent;
+  padding: 14px 20px;
+  border: 1px solid var(--detail-color);
+  color: var(--detail-color);
+  cursor: pointer;
+}

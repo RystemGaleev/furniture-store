@@ -31,8 +31,9 @@ export const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="products">
+      <section id="products" className="products">
         <div className="container">
+          <h2 className="title__h2">The most popular</h2>
           <div className="products__wrapper">
             {products.map((item) => (
               <ProductCard key={item.id} {...item} />

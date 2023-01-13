@@ -3,9 +3,38 @@
   align-items: center;
   gap: 30px;
 }
-.link {
+.link,
+.cart {
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
   color: var(--detail-color);
+}
+.cart {
+  background-color: #3392ff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  width: 100px;
+}
+
+.quantity {
+  position: relative;
+
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--detail-color);
+  border-radius: 50%;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -10px;
+    width: 1px;
+    height: 30px;
+    background-color: var(--detail-color);
+  }
 }

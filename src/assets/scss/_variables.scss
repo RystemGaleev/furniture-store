@@ -1,13 +1,15 @@
 body[data-theme='dark'] {
   --bg-color: #293a54;
-  --detail-color: #e5e6e6;
+  --detail-color: #e5e5e6;
   --main-color: #1b1a1a;
+  --shadow-color: rgba(92, 170, 233, 0.6);
 }
 
 body[data-theme='light'] {
   --bg-color: #f5f5f5;
   --detail-color: #1b1a1a;
   --main-color: #d3cbc5;
+  --shadow-color: rgba(14, 99, 168, 0.4);
 }
 
 :root {
@@ -19,6 +21,34 @@ body[data-theme='light'] {
   font-size: 16px;
   text-transform: uppercase;
   color: #1b1a1a;
+}
+
+.title__h2 {
+  position: relative;
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--detail-color);
+  padding-left: 20px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: -0px;
+    width: 1px;
+    height: 120px;
+    background-color: var(--detail-color);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -30px;
+    width: 120px;
+    height: 1px;
+    background-color: var(--detail-color);
+  }
 }
 
 .classic {
@@ -34,10 +64,12 @@ body[data-theme='light'] {
   cursor: pointer;
   z-index: 5;
   transition: all 0.5s ease-in-out;
+
   &:hover {
     color: #fff;
     background-color: #1b1a1a;
   }
+
   &:active {
     transform: scale(1.1);
   }
