@@ -41,15 +41,15 @@ export const CartPage = () => {
               <div className="cart__checkout">
                 <div className="cart__checkout-block">
                   <div className="cart__checkout-descr">Price</div>
-                  <div className="cart__checkout-price">$ {price}</div>
+                  <div className="cart__checkout-price">${price}</div>
                 </div>
                 <div className="cart__checkout-block">
                   <div className="cart__checkout-descr">Discount 15%</div>
-                  <div className="cart__checkout-price">$ {discount}</div>
+                  <div className="cart__checkout-price">${discount}</div>
                 </div>
                 <div className="cart__checkout-block">
                   <div className="cart__checkout-descr">Total Price</div>
-                  <div className="cart__checkout-price">$ {totalPrice}</div>
+                  <div className="cart__checkout-price">${totalPrice}</div>
                 </div>
                 <div className="cart__checkout-btns">
                   <button onClick={() => null} className="cart__checkout-buy">

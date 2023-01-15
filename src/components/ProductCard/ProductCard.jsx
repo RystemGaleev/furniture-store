@@ -1,10 +1,21 @@
-import style from './ProductCard.module.scss';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../redux/CartSlice';
+import { useNavigate } from 'react-router-dom';
+import { currentProduct } from '../../redux/SingleProductSlice';
+
+import { AiOutlineHeart } from 'react-icons/ai';
+import { BsBoxArrowInUp } from 'react-icons/bs';
+import style from './ProductCard.module.scss';
 
 export const ProductCard = ({ img, id, price, old, title, collection, rating }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { products } = useSelector((state) => state.products);
+
+  const redirectToProduct = () => {
+    dispatch(currentProduct(products));
+    navigate(`/product/${id}`);
+  };
 
   const item = {
     id,
@@ -25,6 +36,10 @@ export const ProductCard = ({ img, id, price, old, title, collection, rating }) 
           <img src={img} alt={`product${id}`} />
         </div>
         <div className={style.tools}>
+          <button onClick={redirectToProduct} className={style.check}>
+            View
+            <BsBoxArrowInUp className={style.iconBlack} size={24} />
+          </button>
           <button onClick={() => dispatch(addToCart(item))} className={style.circle}>
             <svg
               className={style.icon}
@@ -60,8 +75,8 @@ export const ProductCard = ({ img, id, price, old, title, collection, rating }) 
       <div className={style.title}>{title}</div>
       <div className={style.block}>
         Price:
-        <div className={style.old}>{old ? `$ ${old}` : null}</div>
-        <div className={style.price}>$ {price}</div>
+        <div className={style.old}>{old ? `$${old}` : null}</div>
+        <div className={style.price}>${price}</div>
       </div>
     </div>
   );

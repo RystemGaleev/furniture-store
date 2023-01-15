@@ -12,7 +12,7 @@ export const Header = () => {
     <header className={style.header}>
       <div className="container">
         <div className={style.wrapper}>
-          <Link className={style.logo}>
+          <Link to="/" className={style.logo}>
             <svg
               width="32"
               height="35"

@@ -1,0 +1,211 @@
+{
+  "furniture": [
+    {
+      "id": 1,
+      "title": "  Kitchen chair",
+      "price": "46",
+      "old": "76",
+      "img": "https://i.postimg.cc/zD21yygt/img1.png",
+      "rating": 5,
+      "collection": true,
+      "slider": [
+        "https://i.postimg.cc/zD21yygt/img1.png",
+        "https://i.postimg.cc/zD21yygt/img1.png",
+        "https://i.postimg.cc/zD21yygt/img1.png",
+        "https://i.postimg.cc/zD21yygt/img1.png",
+        "https://i.postimg.cc/zD21yygt/img1.png"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "  Coral vase",
+      "price": "75",
+      "old": "96",
+      "img": "https://i.postimg.cc/gkwb8GyY/img2.png",
+      "rating": 5,
+      "slider": [
+        "https://i.postimg.cc/gkwb8GyY/img2.png",
+        "https://i.postimg.cc/gkwb8GyY/img2.png",
+        "https://i.postimg.cc/gkwb8GyY/img2.png",
+        "https://i.postimg.cc/gkwb8GyY/img2.png",
+        "https://i.postimg.cc/gkwb8GyY/img2.png"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "  Gray sofa",
+      "price": "40",
+      "img": "https://i.postimg.cc/HL9qdnmt/img3.png",
+      "rating": 2,
+      "collection": true,
+      "slider": [
+        "https://i.postimg.cc/HL9qdnmt/img3.png",
+        "https://i.postimg.cc/HL9qdnmt/img3.png",
+        "https://i.postimg.cc/HL9qdnmt/img3.png",
+        "https://i.postimg.cc/HL9qdnmt/img3.png",
+        "https://i.postimg.cc/HL9qdnmt/img3.png"
+      ]
+    },
+    {
+      "id": 4,
+      "title": " Decorative bush",
+      "price": "73",
+      "old": "86",
+      "img": "https://i.postimg.cc/yd6wdKYC/img4.png",
+      "rating": 3,
+      "slider": [
+        "https://i.postimg.cc/yd6wdKYC/img4.png",
+        "https://i.postimg.cc/yd6wdKYC/img4.png",
+        "https://i.postimg.cc/yd6wdKYC/img4.png",
+        "https://i.postimg.cc/yd6wdKYC/img4.png",
+        "https://i.postimg.cc/yd6wdKYC/img4.png"
+      ]
+    },
+    {
+      "id": 5,
+      "title": " Living Room lamp",
+      "price": "94",
+      "img": "https://i.postimg.cc/VL3QF24X/img5.png",
+      "rating": 4,
+      "slider": [
+        "https://i.postimg.cc/VL3QF24X/img5.png",
+        "https://i.postimg.cc/VL3QF24X/img5.png",
+        "https://i.postimg.cc/VL3QF24X/img5.png",
+        "https://i.postimg.cc/VL3QF24X/img5.png",
+        "https://i.postimg.cc/VL3QF24X/img5.png"
+      ]
+    },
+    {
+      "id": 6,
+      "title": " Blue chair",
+      "price": "143",
+      "old": "186",
+      "img": "https://i.postimg.cc/1tWbVdfn/img6.png",
+      "rating": 3,
+      "collection": true,
+      "slider": [
+        "https://i.postimg.cc/1tWbVdfn/img6.png",
+        "https://i.postimg.cc/1tWbVdfn/img6.png",
+        "https://i.postimg.cc/1tWbVdfn/img6.png",
+        "https://i.postimg.cc/1tWbVdfn/img6.png",
+        "https://i.postimg.cc/1tWbVdfn/img6.png"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Pastel chair",
+      "price": "240",
+      "img": "https://i.postimg.cc/VvdpqFC7/img7.png",
+      "rating": 5,
+      "slider": [
+        "https://i.postimg.cc/VvdpqFC7/img7.png",
+        "https://i.postimg.cc/VvdpqFC7/img7.png",
+        "https://i.postimg.cc/VvdpqFC7/img7.png",
+        "https://i.postimg.cc/VvdpqFC7/img7.png",
+        "https://i.postimg.cc/VvdpqFC7/img7.png"
+      ]
+    },
+    {
+      "id": 8,
+      "title": " Kitchen chair",
+      "price": "58",
+      "img": "https://i.postimg.cc/Qd1LYSnw/img8.png",
+      "rating": 3,
+      "slider": [
+        "https://i.postimg.cc/Qd1LYSnw/img8.png",
+        "https://i.postimg.cc/Qd1LYSnw/img8.png",
+        "https://i.postimg.cc/Qd1LYSnw/img8.png",
+        "https://i.postimg.cc/Qd1LYSnw/img8.png",
+        "https://i.postimg.cc/Qd1LYSnw/img8.png"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Padded stool",
+      "price": "243",
+      "img": "https://i.postimg.cc/28qJKTKm/img9.png",
+      "rating": 5,
+      "slider": [
+        "https://i.postimg.cc/28qJKTKm/img9.png",
+        "https://i.postimg.cc/28qJKTKm/img9.png",
+        "https://i.postimg.cc/28qJKTKm/img9.png",
+        "https://i.postimg.cc/28qJKTKm/img9.png",
+        "https://i.postimg.cc/28qJKTKm/img9.png"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "  Designer chair",
+      "price": "450",
+      "old": "560",
+      "img": "https://i.postimg.cc/rFvbXWB4/img10.png",
+      "rating": 5,
+      "slider": [
+        "https://i.postimg.cc/rFvbXWB4/img10.png",
+        "https://i.postimg.cc/rFvbXWB4/img10.png",
+        "https://i.postimg.cc/rFvbXWB4/img10.png",
+        "https://i.postimg.cc/rFvbXWB4/img10.png",
+        "https://i.postimg.cc/rFvbXWB4/img10.png"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "  Designer chair blue",
+      "price": "650",
+      "img": "https://i.postimg.cc/QMDyVDxx/img11.png",
+      "rating": 5,
+      "slider": [
+        "https://i.postimg.cc/QMDyVDxx/img11.png",
+        "https://i.postimg.cc/QMDyVDxx/img11.png",
+        "https://i.postimg.cc/QMDyVDxx/img11.png",
+        "https://i.postimg.cc/QMDyVDxx/img11.png",
+        "https://i.postimg.cc/QMDyVDxx/img11.png"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "  Design chair dark",
+      "price": "450",
+      "old": "678",
+      "img": "https://i.postimg.cc/9MFgtB76/img12.png",
+      "rating": 5,
+      "slider": [
+        "https://i.postimg.cc/9MFgtB76/img12.png",
+        "https://i.postimg.cc/9MFgtB76/img12.png",
+        "https://i.postimg.cc/9MFgtB76/img12.png",
+        "https://i.postimg.cc/9MFgtB76/img12.png",
+        "https://i.postimg.cc/9MFgtB76/img12.png"
+      ]
+    },
+    {
+      "id": 13,
+      "title": " Сhair dark",
+      "price": "320",
+      "img": "https://i.postimg.cc/pTGG0nQp/img13.png",
+      "rating": 4,
+      "collection": true,
+      "slider": [
+        "https://i.postimg.cc/pTGG0nQp/img13.png",
+        "https://i.postimg.cc/pTGG0nQp/img13.png",
+        "https://i.postimg.cc/pTGG0nQp/img13.png",
+        "https://i.postimg.cc/pTGG0nQp/img13.png",
+        "https://i.postimg.cc/pTGG0nQp/img13.png"
+      ]
+    },
+    {
+      "id": 14,
+      "title": " Light chair ",
+      "price": "450",
+      "img": "https://i.postimg.cc/GpjSyfHP/img14.png",
+      "rating": 4,
+      "collection": true,
+      "slider": [
+        "https://i.postimg.cc/GpjSyfHP/img14.png",
+        "https://i.postimg.cc/GpjSyfHP/img14.png",
+        "https://i.postimg.cc/GpjSyfHP/img14.png",
+        "https://i.postimg.cc/GpjSyfHP/img14.png",
+        "https://i.postimg.cc/GpjSyfHP/img14.png"
+      ]
+    }
+  ]
+}

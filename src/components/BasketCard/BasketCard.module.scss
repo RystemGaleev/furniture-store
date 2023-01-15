@@ -23,7 +23,7 @@
 }
 
 .price {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
   color: var(--detail-color);
 }
@@ -39,6 +39,11 @@
   font-size: 22px;
   color: var(--detail-color);
   font-weight: 600;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 5px;
+  text-overflow: ellipsis;
 }
 
 .icon {

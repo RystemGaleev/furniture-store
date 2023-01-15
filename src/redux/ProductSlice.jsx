@@ -4,9 +4,9 @@ export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async (_, thunkAPI) => {
     try {
-      const response = await fetch(
-        `https://4qwe5cl20x.api.quickmocker.com/furniture`,
-      ).then((data) => data.json());
+      const response = await fetch(`http://localhost:3001/furniture`).then((data) =>
+        data.json(),
+      );
       return response;
     } catch (error) {
       return thunkAPI.rejectWithValue({ error: error.message });

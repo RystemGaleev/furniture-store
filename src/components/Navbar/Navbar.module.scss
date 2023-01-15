@@ -11,6 +11,9 @@
   color: var(--detail-color);
 }
 .cart {
+  color: white;
+}
+.cart {
   background-color: #3392ff;
   display: flex;
   align-items: center;
@@ -22,10 +25,9 @@
 
 .quantity {
   position: relative;
-
   font-size: 18px;
   font-weight: 400;
-  color: var(--detail-color);
+  color: white;
   border-radius: 50%;
   &::before {
     content: '';
@@ -35,6 +37,6 @@
     left: -10px;
     width: 1px;
     height: 30px;
-    background-color: var(--detail-color);
+    background-color: white;
   }
 }

@@ -16,7 +16,6 @@ export const HomePage = () => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  console.log(products);
   return (
     <Layout>
       <section className="home">

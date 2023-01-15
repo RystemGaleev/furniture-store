@@ -11,7 +11,7 @@ export const BasketCard = ({ id, price, img, title, quantity }) => {
       <div className={style.img}>
         <img src={img} alt={`product${id}`} />
       </div>
-      <div className={style.price}>$ {price * quantity}</div>
+      <div className={style.price}>${price * quantity}</div>
       <div className={style.title}>{title}</div>
       <div className={style.tools}>
         <div className={style.block}>
