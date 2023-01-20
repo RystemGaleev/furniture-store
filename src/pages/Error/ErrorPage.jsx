@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from '../../assets/Layout/Layout';
+import { Layout } from '../../Layout/Layout';
 
 export const ErrorPage = () => {
   return (

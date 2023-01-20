@@ -52,8 +52,11 @@ body[data-theme='light'] {
 }
 
 .classic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  min-width: 200px;
+  width: 200px;
   padding: 0 15px;
   height: 54px;
   border: 1px solid #1b1a1a;

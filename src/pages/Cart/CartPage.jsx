@@ -1,13 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Layout } from '../../assets/Layout/Layout';
+import { useContext } from 'react';
+import { ModalContext } from '../../context/ModalContext';
+
+import { Layout } from '../../Layout/Layout';
 import { BasketCard } from '../../components/BasketCard/BasketCard';
 import { clearCart } from '../../redux/CartSlice';
+import CustomModal from '../../components/CustomModal/CustomModal';
+import { InformationBlock } from '../../components/InformationBlock/InformationBlock';
+import { FormOrder } from '../../components/FormOrder/FormOrder';
 
 import { AiOutlineCheck, AiOutlineClose } from 'react-icons/ai';
 import { getTotal } from '../../utils';
-
 import './Cart.scss';
-import { InformationBlock } from '../../components/InformationBlock/InformationBlock';
 
 export const CartPage = () => {
   const dispatch = useDispatch();
@@ -17,8 +21,27 @@ export const CartPage = () => {
   const discount = Math.round(price * 0.15);
   const totalPrice = Math.round(price - discount);
 
+  const { modalOpen, setModalOpen } = useContext(ModalContext);
+
   return (
     <Layout>
+      <CustomModal
+        isOpen={modalOpen.formModal}
+        handleClose={() => setModalOpen({ ...modalOpen, formModal: false })}
+        style={{
+          width: '600px',
+          left: '50%',
+          top: '50%',
+          height: '550px',
+          backgroundColor: '#fff',
+          transform: 'translate(-50%, -50%)',
+          color: '#1e1e1e',
+        }}
+      >
+        <FormOrder
+          setModalOpenForm={() => setModalOpen({ ...modalOpen, formModal: false })}
+        />
+      </CustomModal>
       <div className="cart">
         <div className="container">
           <h2 className="title__h2">Shopping Cart page</h2>
@@ -52,7 +75,10 @@ export const CartPage = () => {
                   <div className="cart__checkout-price">${totalPrice}</div>
                 </div>
                 <div className="cart__checkout-btns">
-                  <button onClick={() => null} className="cart__checkout-buy">
+                  <button
+                    onClick={() => setModalOpen({ ...modalOpen, formModal: true })}
+                    className="cart__checkout-buy"
+                  >
                     Place an order
                     <AiOutlineCheck className="icon" size={22} />
                   </button>

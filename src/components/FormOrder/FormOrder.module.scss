@@ -1,0 +1,96 @@
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: #1e1e1e;
+}
+.formOpacity {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: #1e1e1e;
+  filter: blur(2px);
+}
+.block {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+}
+.inputBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  label {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input {
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 20px;
+  height: 50px;
+}
+
+.inputCard {
+  width: 100%;
+  border: 1px solid #1e1e1e;
+}
+.inputCardError {
+  width: 100%;
+  border: 1px solid red;
+}
+.inputSmall {
+  width: 250px;
+  border: 1px solid #1e1e1e;
+}
+.inputSmallError {
+  width: 250px;
+  border: 1px solid red !important;
+}
+
+.pay {
+  height: 50px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  background-color: #1e1e1e;
+  cursor: pointer;
+  &:disabled {
+    background-color: rgba(30, 30, 30, 0.3);
+  }
+}
+.descr {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.4);
+  line-height: 24px;
+}
+
+.errorText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #e72525;
+}

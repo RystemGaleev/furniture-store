@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { addToCart } from '../../redux/CartSlice';
 
-import { Layout } from '../../assets/Layout/Layout';
+import { Layout } from '../../Layout/Layout';
 import { SliderForCard } from '../SliderForCard/SliderForCard';
 import style from './SingleProduct.module.scss';
 

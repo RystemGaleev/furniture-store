@@ -1,7 +1,7 @@
 .home {
   background: url('../../../public/image/bg-main.jpg') center center/cover no-repeat;
-  min-height: 800px;
-  padding-top: 120px;
+  height: 100vh;
+  padding-top: 240px;
   i {
     font-size: 16px;
     font-weight: 400;
@@ -40,7 +40,7 @@
 }
 
 .products {
-  margin-top: 100px;
+  margin: 100px 0;
   &__wrapper {
     display: flex;
     flex-wrap: wrap;

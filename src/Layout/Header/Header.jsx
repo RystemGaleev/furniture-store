@@ -1,13 +1,27 @@
 import { useContext } from 'react';
-import { Navbar } from '../../../components/Navbar/Navbar';
-import style from './Header.module.scss';
-import { ThemeContext } from '../../../context/ThemeContext';
+import { ThemeContext } from '../../context/ThemeContext';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
-import { CiDark, CiLight } from 'react-icons/ci';
-import { Link } from 'react-router-dom';
+import { Navbar } from '../../components/Navbar/Navbar';
+
+import { CiDark, CiLight, CiUser } from 'react-icons/ci';
+import style from './Header.module.scss';
 
 export const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const { user, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate('/signup');
+      console.log('you logout');
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
     <header className={style.header}>
       <div className="container">
@@ -45,6 +59,13 @@ export const Header = () => {
                 </div>
               )}
             </button>
+            <div className={style.user}>
+              {/* <div className={style.userInfo}></div> */}
+              <button onClick={handleLogout} className={style.logout}>
+                <div className={style.name}>{user && user.displayName}</div>
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </div>
