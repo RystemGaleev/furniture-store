@@ -4,7 +4,8 @@
   gap: 30px;
 }
 .link,
-.cart {
+.cart,
+.linkActive {
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
@@ -12,6 +13,19 @@
 }
 .cart {
   color: white;
+}
+.linkActive {
+  position: relative;
+  color: #3392ff;
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3392ff;
+  }
 }
 .cart {
   background-color: #3392ff;

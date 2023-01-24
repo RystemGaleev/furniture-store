@@ -4,6 +4,17 @@
   flex-direction: column;
   gap: 40px;
   color: #1e1e1e;
+  input {
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 20px;
+    height: 50px;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 }
 .formOpacity {
   position: relative;
@@ -32,19 +43,6 @@
     font-size: 18px;
     font-weight: 500;
   }
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-input {
-  outline: none;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 12px 20px;
-  height: 50px;
 }
 
 .inputCard {

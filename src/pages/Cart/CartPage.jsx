@@ -11,7 +11,10 @@ import { FormOrder } from '../../components/FormOrder/FormOrder';
 
 import { AiOutlineCheck, AiOutlineClose } from 'react-icons/ai';
 import { getTotal } from '../../utils';
+
+import { motion } from 'framer-motion';
 import './Cart.scss';
+import { frameAnimationY, textAnimation } from '../../Animations/Animation';
 
 export const CartPage = () => {
   const dispatch = useDispatch();
@@ -42,9 +45,21 @@ export const CartPage = () => {
           setModalOpenForm={() => setModalOpen({ ...modalOpen, formModal: false })}
         />
       </CustomModal>
-      <div className="cart">
+      <motion.section
+        className="cart"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0, opacity: 0 }}
+      >
         <div className="container">
-          <h2 className="title__h2">Shopping Cart page</h2>
+          <motion.h2
+            variants={textAnimation}
+            initial="hidden"
+            whileInView="visible"
+            className="title__h2"
+          >
+            Shopping Cart page
+          </motion.h2>
           <div className="cart__wrapper">
             <div className="cart__items">
               {cart.length > 0 ? (
@@ -54,7 +69,12 @@ export const CartPage = () => {
               )}
             </div>
 
-            <div className="cart__information">
+            <motion.div
+              className="cart__information"
+              variants={frameAnimationY}
+              initial="hidden"
+              whileInView="visible"
+            >
               <div className="cart__information-block">
                 <div className="cart__information-title">Chekcout</div>
                 <div className="cart__information-products">
@@ -91,10 +111,10 @@ export const CartPage = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.section>
     </Layout>
   );
 };

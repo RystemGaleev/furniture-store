@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/ProductSlice';
 import { HashLink } from 'react-router-hash-link';
@@ -8,15 +8,24 @@ import { ModalContext } from '../../context/ModalContext';
 import { Layout } from '../../Layout/Layout';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
 import CustomModal from '../../components/CustomModal/CustomModal';
+import { Search } from '../../components/Search/Search';
 
+import { motion } from 'framer-motion';
+import { textAnimation } from '../../Animations/Animation';
 import './Home.scss';
 
 export const HomePage = () => {
   const dispatch = useDispatch();
-  const { products } = useSelector((state) => state.products);
 
   const { user } = useContext(AuthContext);
   const { modalOpen, setModalOpen } = useContext(ModalContext);
+
+  const { products } = useSelector((state) => state.products);
+  const [searchValue, setSearchValue] = useState('');
+
+  const filterProducts = products.filter((item) =>
+    item.title.toLowerCase().includes(searchValue.toLowerCase()),
+  );
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -24,7 +33,12 @@ export const HomePage = () => {
 
   return (
     <Layout>
-      <section className="home">
+      <motion.section
+        className="home"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0, opacity: 0 }}
+      >
         <div className="container">
           <div className="home__wrapper">
             <CustomModal
@@ -53,12 +67,23 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
       <section id="products" className="products">
         <div className="container">
-          <h2 className="title__h2">The most popular</h2>
+          <div className="products__block">
+            <motion.h2
+              variants={textAnimation}
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 0.3, delay: 0.2 }}
+              className="title__h2"
+            >
+              The most popular
+            </motion.h2>
+            <Search setSearchValue={setSearchValue} searchValue={searchValue} />
+          </div>
           <div className="products__wrapper">
-            {products.map((item) => (
+            {filterProducts.map((item) => (
               <ProductCard key={item.id} {...item} />
             ))}
           </div>

@@ -3,11 +3,20 @@ import { AiOutlineMinus, AiOutlinePlus, AiOutlineClose } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { removeInCart, decrementProduct, incrementProduct } from '../../redux/CartSlice';
 
+import { motion } from 'framer-motion';
+import { frameAnimationX } from '../../Animations/Animation';
+
 export const BasketCard = ({ id, price, img, title, quantity }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className={style.item}>
+    <motion.div
+      className={style.item}
+      variants={frameAnimationX}
+      initial="hidden"
+      whileInView="visible"
+      transition={{ duration: 0.4, delay: 0.3 }}
+    >
       <div className={style.img}>
         <img src={img} alt={`product${id}`} />
       </div>
@@ -39,6 +48,6 @@ export const BasketCard = ({ id, price, img, title, quantity }) => {
           />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };

@@ -4,6 +4,7 @@ import { SingleProduct } from '../components/SingleProduct/SingleProduct';
 import { ErrorPage } from '../pages/Error/ErrorPage';
 import { Login } from '../pages/Auth/Login/Login';
 import { SignUp } from '../pages/Auth/SignUp/SignUp';
+import { FavouritesPage } from '../pages/Favourites/FavouritesPage';
 
 export const publicRoutes = [
   { path: '/login', element: <Login /> },
@@ -12,6 +13,8 @@ export const publicRoutes = [
 export const privateRoutes = [
   { path: '/', element: <HomePage /> },
   { path: '/cart', element: <CartPage /> },
+  { path: '/favourites', element: <FavouritesPage /> },
+
   { path: '/product/:id', element: <SingleProduct /> },
   { path: '*', element: <ErrorPage /> },
 ];

@@ -3,17 +3,20 @@ body[data-theme='dark'] {
   --detail-color: #e5e5e6;
   --main-color: #1b1a1a;
   --shadow-color: rgba(92, 170, 233, 0.6);
+  --shadow-cards: 4px 4px 8px 0px rgba(255, 255, 255, 0.2);
 }
 
 body[data-theme='light'] {
   --bg-color: #f5f5f5;
   --detail-color: #1b1a1a;
-  --main-color: #d3cbc5;
+  --main-color: #ebebeb;
   --shadow-color: rgba(14, 99, 168, 0.4);
+  --shadow-cards: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
 :root {
   --radius: 6px;
+  --toastify-icon-color-success: #3392ff !important;
 }
 
 .subtitle {

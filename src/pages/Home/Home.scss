@@ -25,7 +25,7 @@
       left: -20px;
       width: 1px;
       height: 340px;
-      background-color: black;
+      background-color: #1b1a1a;
     }
     &::after {
       content: '';
@@ -34,17 +34,23 @@
       left: -60px;
       width: 340px;
       height: 1px;
-      background-color: black;
+      background-color: #1b1a1a;
     }
   }
 }
 
 .products {
   margin: 100px 0;
+  min-height: 100vh;
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    margin-top: 80px;
+    margin: 80px 0 120px;
+  }
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

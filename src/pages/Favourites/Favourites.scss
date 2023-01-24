@@ -1,0 +1,11 @@
+.favourites {
+  padding-top: 160px;
+
+  &__wrapper {
+    display: flex;
+    gap: 30px;
+    align-self: start;
+    flex-wrap: wrap;
+    margin: 80px 0 120px;
+  }
+}

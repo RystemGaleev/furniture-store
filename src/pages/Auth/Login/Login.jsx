@@ -32,7 +32,7 @@ export const Login = () => {
       const startTimer = () => {
         const timer = setTimeout(() => {
           setModalOpen({ ...modalOpen, welcomModal: false });
-        }, 5000);
+        }, 3000);
         return () => clearTimeout(timer);
       };
       startTimer();

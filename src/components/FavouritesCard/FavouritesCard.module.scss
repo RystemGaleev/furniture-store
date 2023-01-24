@@ -42,30 +42,6 @@
     }
   }
 
-  .banners {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-
-  .sale,
-  .new {
-    padding: 6px 10px;
-    background-color: #ff4343;
-    color: white;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: var(--radius);
-    text-align: center;
-  }
-
-  .new {
-    background-color: #3392ff;
-  }
-
   .tools {
     width: 100%;
     display: flex;
@@ -80,10 +56,10 @@
     color: var(--detail-color);
     transition: color 0.3s ease-in-out;
     background-color: transparent;
+    width: 40px;
+    height: 40px;
     border: none;
     cursor: pointer;
-    width: 30px;
-    height: 30px;
     transition: transform 0.1s ease;
     &:active {
       transform: scale(1.1);
@@ -93,8 +69,6 @@
   .icon {
     transition: color 0.3s ease-in-out;
     cursor: pointer;
-    width: 30px;
-    height: 30px;
   }
 
   .check {
@@ -110,7 +84,6 @@
     border: none;
     color: white;
     transition: transform 0.1s ease;
-
     &:active {
       transform: scale(1.1);
     }
@@ -129,6 +102,11 @@
     color: #1e1e1e;
   }
 
+  .price {
+    font-weight: 600;
+    font-size: 20px;
+    color: #1e1e1e;
+  }
   .block {
     display: flex;
     align-items: center;
@@ -143,11 +121,5 @@
     font-size: 16px;
     color: #737373;
     text-decoration: line-through;
-  }
-
-  .price {
-    font-weight: 600;
-    font-size: 20px;
-    color: #1e1e1e;
   }
 }

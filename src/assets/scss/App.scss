@@ -1,4 +1,4 @@
-// @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;900&display=swap');
 @import './variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap');
 
@@ -6,11 +6,11 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: 'JetBrains Mono', monospace;
 }
 
 body {
-  // font-family: 'Roboto Slab', serif;
+  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Roboto Slab', serif;
   overflow-x: hidden;
   background-color: var(--bg-color);
   transition: background-color 0.5s ease-in-out;
@@ -24,4 +24,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.Toastify__toast-container--top-right {
+  &:last-child {
+    margin-top: 80px !important;
+  }
 }
