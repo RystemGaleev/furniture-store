@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useContext } from 'react';
 import { ModalContext } from '../../context/ModalContext';
+import { ToastContainer, toast } from 'react-toastify';
 
 import { Layout } from '../../Layout/Layout';
 import { BasketCard } from '../../components/BasketCard/BasketCard';
@@ -12,9 +13,10 @@ import { FormOrder } from '../../components/FormOrder/FormOrder';
 import { AiOutlineCheck, AiOutlineClose } from 'react-icons/ai';
 import { getTotal } from '../../utils';
 
-import { motion } from 'framer-motion';
-import './Cart.scss';
 import { frameAnimationY, textAnimation } from '../../Animations/Animation';
+import { motion } from 'framer-motion';
+import { TfiShoppingCart } from 'react-icons/tfi';
+import './Cart.scss';
 
 export const CartPage = () => {
   const dispatch = useDispatch();
@@ -25,6 +27,14 @@ export const CartPage = () => {
   const totalPrice = Math.round(price - discount);
 
   const { modalOpen, setModalOpen } = useContext(ModalContext);
+
+  const removeAllItem = () => {
+    toast.error('Deleting all products', {
+      autoClose: 2000,
+      icon: <TfiShoppingCart size={30} color={'#e74c3c'} />,
+    });
+    dispatch(clearCart());
+  };
 
   return (
     <Layout>
@@ -75,6 +85,15 @@ export const CartPage = () => {
               initial="hidden"
               whileInView="visible"
             >
+              <ToastContainer
+                closeOnClick={false}
+                pauseOnFocusLoss={false}
+                pauseOnHover={false}
+                position={'top-right'}
+                draggable={false}
+                limit={7}
+                closeButton={false}
+              />
               <div className="cart__information-block">
                 <div className="cart__information-title">Chekcout</div>
                 <div className="cart__information-products">
@@ -102,10 +121,7 @@ export const CartPage = () => {
                     Place an order
                     <AiOutlineCheck className="icon" size={22} />
                   </button>
-                  <button
-                    onClick={() => dispatch(clearCart())}
-                    className="cart__checkout-remove"
-                  >
+                  <button onClick={removeAllItem} className="cart__checkout-remove">
                     Clear cart
                     <AiOutlineClose className="icon remove" size={22} />
                   </button>

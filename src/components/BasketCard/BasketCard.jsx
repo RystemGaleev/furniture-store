@@ -3,11 +3,21 @@ import { AiOutlineMinus, AiOutlinePlus, AiOutlineClose } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { removeInCart, decrementProduct, incrementProduct } from '../../redux/CartSlice';
 
+import { TfiShoppingCart } from 'react-icons/tfi';
+import { ToastContainer, toast } from 'react-toastify';
 import { motion } from 'framer-motion';
 import { frameAnimationX } from '../../Animations/Animation';
 
 export const BasketCard = ({ id, price, img, title, quantity }) => {
   const dispatch = useDispatch();
+
+  const removeItem = () => {
+    toast.error('Product removed from cart', {
+      autoClose: 2000,
+      icon: <TfiShoppingCart size={30} color={'#e74c3c'} />,
+    });
+    dispatch(removeInCart(id));
+  };
 
   return (
     <motion.div
@@ -20,6 +30,15 @@ export const BasketCard = ({ id, price, img, title, quantity }) => {
       <div className={style.img}>
         <img src={img} alt={`product${id}`} />
       </div>
+      <ToastContainer
+        closeOnClick={false}
+        pauseOnFocusLoss={false}
+        pauseOnHover={false}
+        position={'top-right'}
+        draggable={false}
+        limit={7}
+        closeButton={false}
+      />
       <div className={style.price}>${price * quantity}</div>
       <div className={style.title}>{title}</div>
       <div className={style.tools}>
@@ -41,11 +60,7 @@ export const BasketCard = ({ id, price, img, title, quantity }) => {
           </button>
         </div>
         <button className={style.btn}>
-          <AiOutlineClose
-            onClick={() => dispatch(removeInCart(id))}
-            className={style.icon}
-            size={28}
-          />
+          <AiOutlineClose onClick={removeItem} className={style.icon} size={28} />
         </button>
       </div>
     </motion.div>

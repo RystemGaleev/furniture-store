@@ -5,7 +5,7 @@ import { AuthContext } from '../../context/AuthContext';
 
 import { Navbar } from '../../components/Navbar/Navbar';
 
-import { CiDark, CiLight, CiUser } from 'react-icons/ci';
+import { CiDark, CiLight } from 'react-icons/ci';
 import style from './Header.module.scss';
 
 export const Header = () => {
@@ -17,7 +17,6 @@ export const Header = () => {
     try {
       await logout();
       navigate('/signup');
-      console.log('you logout');
     } catch (error) {
       console.log(error.message);
     }
@@ -59,13 +58,14 @@ export const Header = () => {
                 </div>
               )}
             </button>
-            <div className={style.user}>
-              {/* <div className={style.userInfo}></div> */}
-              <button onClick={handleLogout} className={style.logout}>
-                <div className={style.name}>{user && user.displayName}</div>
-                Logout
-              </button>
-            </div>
+            {user ? (
+              <div className={style.user}>
+                <button onClick={handleLogout} className={style.logout}>
+                  <div className={style.name}>{user && user.displayName}</div>
+                  Logout
+                </button>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>

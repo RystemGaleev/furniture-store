@@ -47,12 +47,12 @@
   font-weight: 500;
   color: #1e1e1e;
   a {
+    font-size: 20px;
     color: white;
-    font-weight: 800;
+    font-weight: 500;
     margin-left: 10px;
-    background-color: #3392ff;
-    padding: 6px 20px;
-    border-radius: 6px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
   }
 }
 .btns {
