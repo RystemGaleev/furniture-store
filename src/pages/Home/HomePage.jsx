@@ -36,7 +36,7 @@ export const HomePage = () => {
       <motion.section
         className="home"
         initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        animate={{ scale: 1, opacity: 1, transition: { duration: 0.4 } }}
         exit={{ scale: 0, opacity: 0 }}
       >
         <div className="container">
@@ -60,6 +60,7 @@ export const HomePage = () => {
             <div className="home__block">
               <div className="subtitle">INTERIOR</div>
               <h1 className="home__title">Home Design</h1>
+
               <i>Great design begins with an even greater story</i>
               <HashLink smooth to="/#products" className="classic">
                 Shop now

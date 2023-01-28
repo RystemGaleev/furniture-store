@@ -38,6 +38,15 @@ export const CartPage = () => {
 
   return (
     <Layout>
+      <ToastContainer
+        closeOnClick={false}
+        pauseOnFocusLoss={false}
+        pauseOnHover={false}
+        position={'top-right'}
+        draggable={false}
+        limit={7}
+        closeButton={false}
+      />
       <CustomModal
         isOpen={modalOpen.formModal}
         handleClose={() => setModalOpen({ ...modalOpen, formModal: false })}
@@ -55,10 +64,11 @@ export const CartPage = () => {
           setModalOpenForm={() => setModalOpen({ ...modalOpen, formModal: false })}
         />
       </CustomModal>
+
       <motion.section
         className="cart"
         initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        animate={{ scale: 1, opacity: 1, transition: { duration: 0.4 } }}
         exit={{ scale: 0, opacity: 0 }}
       >
         <div className="container">
@@ -85,15 +95,6 @@ export const CartPage = () => {
               initial="hidden"
               whileInView="visible"
             >
-              <ToastContainer
-                closeOnClick={false}
-                pauseOnFocusLoss={false}
-                pauseOnHover={false}
-                position={'top-right'}
-                draggable={false}
-                limit={7}
-                closeButton={false}
-              />
               <div className="cart__information-block">
                 <div className="cart__information-title">Chekcout</div>
                 <div className="cart__information-products">

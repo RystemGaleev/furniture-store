@@ -14,7 +14,7 @@ export const FavouritesPage = () => {
       <motion.section
         className="favourites"
         initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        animate={{ scale: 1, opacity: 1, transition: { duration: 0.4 } }}
         exit={{ scale: 0, opacity: 0 }}
       >
         <div className="container">

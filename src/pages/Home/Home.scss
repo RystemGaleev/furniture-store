@@ -1,5 +1,5 @@
 .home {
-  background: url('../../../public/image/bg-main.jpg') center center/cover no-repeat;
+  background: url('../../../public/image/back.jpg') right center/cover no-repeat;
   height: 100vh;
   padding-top: 240px;
   i {
@@ -7,10 +7,11 @@
     font-weight: 400;
     margin: 14px 0 80px;
     display: inline-block;
+    color: #1b1a1a;
   }
   &__block {
     max-width: 500px;
-    margin-left: 50px;
+    margin-left: 100px;
   }
 
   &__title {

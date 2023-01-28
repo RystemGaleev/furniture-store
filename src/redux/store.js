@@ -3,6 +3,7 @@ import productsReducer from './ProductSlice';
 import cartReducer from './CartSlice';
 import singleProductReducer from './CartSlice';
 import favouritesReducer from './FavouritesSlice';
+import reviewsReducer from './ReviewsSlice';
 
 import {
   persistStore,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   singleProduct: singleProductReducer,
   favourites: favouritesReducer,
+  reviews: reviewsReducer,
 });
 
 const persistConfig = {

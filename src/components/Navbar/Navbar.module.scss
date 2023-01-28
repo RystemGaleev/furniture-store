@@ -2,20 +2,20 @@
   display: flex;
   align-items: center;
   gap: 30px;
+  &:nth-child(1) {
+    color: red !important;
+  }
 }
 .link,
 .cart,
 .linkActive {
+  position: relative;
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
   color: var(--detail-color);
 }
-.cart {
-  color: white;
-}
 .linkActive {
-  position: relative;
   color: #3392ff;
   &::before {
     position: absolute;
@@ -27,6 +27,27 @@
     background-color: #3392ff;
   }
 }
+.cart {
+  color: white;
+}
+
+.favouriteQuantity {
+  position: absolute;
+  top: -22px;
+  right: -22px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  min-width: 30px;
+  min-height: 30px;
+  border-radius: 50%;
+  background-color: #3392ff;
+}
+
 .cart {
   background-color: #3392ff;
   display: flex;

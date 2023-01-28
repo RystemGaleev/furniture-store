@@ -7,6 +7,7 @@ import { IconUi } from '../ui/IconUi';
 
 export const Navbar = () => {
   const { cart } = useSelector((state) => state.cart);
+  const { favourites } = useSelector((state) => state.favourites);
   return (
     <nav className={style.nav}>
       <NavLink
@@ -20,6 +21,9 @@ export const Navbar = () => {
         className={({ isActive }) => (isActive ? style.linkActive : style.link)}
       >
         Favourites
+        {favourites.length >= 1 ? (
+          <div className={style.favouriteQuantity}>{favourites.length}</div>
+        ) : null}
       </NavLink>
       <NavLink
         to="/contact"
