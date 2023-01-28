@@ -3,6 +3,7 @@ import productsReducer from './ProductSlice';
 import cartReducer from './CartSlice';
 import singleProductReducer from './CartSlice';
 import favouritesReducer from './FavouritesSlice';
+import orderReducer from './OrderSlice';
 import reviewsReducer from './ReviewsSlice';
 
 import {
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   singleProduct: singleProductReducer,
   favourites: favouritesReducer,
+  orders: orderReducer,
   reviews: reviewsReducer,
 });
 

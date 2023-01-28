@@ -67,7 +67,7 @@
     .icon {
       color: #1b1a1a;
       &.remove {
-        color: white;
+        color: var(--white-color);
       }
     }
     &-buy {
@@ -104,7 +104,7 @@
       border: none;
       border-radius: 6px;
       background-color: rgb(252, 62, 62);
-      color: white;
+      color: var(--white-color);
       cursor: pointer;
     }
   }

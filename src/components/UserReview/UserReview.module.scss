@@ -4,7 +4,7 @@
   align-items: flex-start;
   color: var(--detail-color);
   padding: 12px 20px;
-  border: 1px solid #3392ff;
+  border: 1px solid var(--blue-color);
   border-radius: 6px;
 }
 .text {
@@ -13,9 +13,9 @@
   gap: 10px;
 }
 .icon {
-  color: white;
+  color: var(--white-color);
   border-radius: 50%;
-  background-color: #3392ff;
+  background-color: var(--blue-color);
   padding: 8px;
   display: flex;
   align-items: center;

@@ -83,7 +83,7 @@ export const CartPage = () => {
           <div className="cart__wrapper">
             <div className="cart__items">
               {cart.length > 0 ? (
-                cart.map((card) => <BasketCard key={card.id} {...card} />)
+                cart?.map((card) => <BasketCard key={card.id} {...card} />)
               ) : (
                 <InformationBlock />
               )}

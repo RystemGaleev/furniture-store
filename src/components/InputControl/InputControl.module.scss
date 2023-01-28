@@ -20,7 +20,7 @@
     background-color: transparent;
 
     &:focus {
-      border-bottom: 2px solid #3392ff;
+      border-bottom: 2px solid var(--blue-color);
     }
   }
 }

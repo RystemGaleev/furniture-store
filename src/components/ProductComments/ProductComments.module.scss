@@ -53,13 +53,14 @@
 .send {
   width: 200px;
   height: 50px;
-  color: white;
-  background-color: #3392ff;
+  color: var(--white-color);
+  background-color: var(--blue-color);
   border: none;
   font-size: 22px;
   font-weight: 500;
   border-radius: 6px;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 .error {
   color: red;

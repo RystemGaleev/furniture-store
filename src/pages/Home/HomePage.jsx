@@ -51,7 +51,7 @@ export const HomePage = () => {
                 top: '50%',
                 height: '70px',
                 transform: 'translate(-50%, -50%)',
-                backgroundColor: '#3392ff',
+                backgroundColor: 'var(--blue-color)',
               }}
             >
               <div className="popup__title">Welcome {user.displayName}</div>

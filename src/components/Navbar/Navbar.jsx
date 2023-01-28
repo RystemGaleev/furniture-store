@@ -26,10 +26,10 @@ export const Navbar = () => {
         ) : null}
       </NavLink>
       <NavLink
-        to="/contact"
+        to="/orders"
         className={({ isActive }) => (isActive ? style.linkActive : style.link)}
       >
-        Contact us
+        Orders
       </NavLink>
       <Link to="/cart" className={style.cart}>
         <IconUi name="cart" cl={style.icon} />

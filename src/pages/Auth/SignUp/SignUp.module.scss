@@ -48,7 +48,7 @@
   color: #1e1e1e;
   a {
     font-size: 20px;
-    color: white;
+    color: var(--white-color);
     font-weight: 500;
     margin-left: 10px;
     text-decoration: underline;
@@ -64,8 +64,8 @@
   border: none;
   font-size: 20px;
   font-weight: 500;
-  color: white;
-  background-color: #3392ff;
+  color: var(--white-color);
+  background-color: var(--blue-color);
   height: 50px;
   cursor: pointer;
   border-radius: 4px;

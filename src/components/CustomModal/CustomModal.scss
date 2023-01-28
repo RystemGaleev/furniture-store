@@ -1,7 +1,7 @@
 .popup {
   position: fixed;
   z-index: 1000;
-  background-color: #3392ff;
+  background-color: var(--blue-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,18 +34,18 @@
   &__title {
     font-size: 26px;
     font-weight: 600;
-    color: white;
+    color: var(--white-color);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
   }
   &__icon {
-    color: white;
+    color: var(--white-color);
   }
   &__descr {
     font-size: 18px;
-    color: white;
+    color: var(--white-color);
     text-align: center;
     font-weight: 400;
     line-height: 26px;

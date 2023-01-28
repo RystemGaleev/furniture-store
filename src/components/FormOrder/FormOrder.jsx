@@ -5,11 +5,15 @@ import { TfiHeart } from 'react-icons/tfi';
 import style from './FormOrder.module.scss';
 import { useContext } from 'react';
 import { ModalContext } from '../../context/ModalContext';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { clearCart } from '../../redux/CartSlice';
+import { addToOrders } from '../../redux/OrderSlice';
 
 export const FormOrder = ({ setModalOpenForm }) => {
   const { modalOpen, setModalOpen } = useContext(ModalContext);
+  const { cart } = useSelector((state) => state.cart);
+  const { orders } = useSelector((state) => state.orders);
+
   const dispatch = useDispatch();
 
   const {
@@ -25,7 +29,11 @@ export const FormOrder = ({ setModalOpenForm }) => {
     reset();
     setModalOpen({ ...modalOpen, thanksModal: true });
     startTimer();
+
+    dispatch(addToOrders(cart));
     dispatch(clearCart());
+    console.log(orders);
+    console.log(cart);
   };
 
   const startTimer = () => {

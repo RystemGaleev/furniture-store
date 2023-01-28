@@ -16,7 +16,9 @@ body[data-theme='light'] {
 
 :root {
   --radius: 6px;
-  --toastify-icon-color-success: #3392ff !important;
+  --toastify-icon-color-success: var(--blue-color) !important;
+  --blue-color: #3392ff;
+  --white-color: #fff;
 }
 
 .subtitle {

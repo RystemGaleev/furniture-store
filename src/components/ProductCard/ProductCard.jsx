@@ -33,7 +33,7 @@ export const ProductCard = ({ img, id, price, old, title, collection, rating }) 
   const AddedInCart = () => {
     toast.info('Product added to cart', {
       autoClose: 2000,
-      icon: <TfiShoppingCart size={30} color={'#3392ff'} />,
+      icon: <TfiShoppingCart size={30} color={'var(--blue-color)'} />,
     });
     dispatch(addToCart(item));
   };
@@ -41,7 +41,7 @@ export const ProductCard = ({ img, id, price, old, title, collection, rating }) 
   const AddedInFavourite = () => {
     toast.info('Product added to favourites', {
       autoClose: 2000,
-      icon: <TfiHeart size={30} color={'#3392ff'} />,
+      icon: <TfiHeart size={30} color={'var(--blue-color)'} />,
     });
     dispatch(addToFavourites(item));
   };

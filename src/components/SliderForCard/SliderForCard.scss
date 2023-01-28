@@ -10,7 +10,7 @@
   }
   .swiper-slide-active {
     height: 230px;
-    border: 1px solid #3392ff;
+    border: 1px solid var(--blue-color);
   }
   .swiper-button-prev {
     left: 20px;
@@ -26,7 +26,7 @@
     border: 1px solid var(--detail-color);
   }
   .swiper-slide-thumb-active {
-    border: 1px solid #3392ff;
+    border: 1px solid var(--blue-color);
   }
   .swiper-slide {
     height: 100px;

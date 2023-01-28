@@ -16,7 +16,7 @@
   color: var(--detail-color);
 }
 .linkActive {
-  color: #3392ff;
+  color: var(--blue-color);
   &::before {
     position: absolute;
     content: '';
@@ -24,11 +24,11 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #3392ff;
+    background-color: var(--blue-color);
   }
 }
 .cart {
-  color: white;
+  color: var(--white-color);
 }
 
 .favouriteQuantity {
@@ -37,7 +37,7 @@
   right: -22px;
   font-size: 16px;
   font-weight: 500;
-  color: white;
+  color: var(--white-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,11 +45,11 @@
   min-width: 30px;
   min-height: 30px;
   border-radius: 50%;
-  background-color: #3392ff;
+  background-color: var(--blue-color);
 }
 
 .cart {
-  background-color: #3392ff;
+  background-color: var(--blue-color);
   display: flex;
   align-items: center;
   gap: 20px;
@@ -62,7 +62,7 @@
   position: relative;
   font-size: 18px;
   font-weight: 400;
-  color: white;
+  color: var(--white-color);
   border-radius: 50%;
   &::before {
     content: '';
@@ -72,6 +72,6 @@
     left: -10px;
     width: 1px;
     height: 30px;
-    background-color: white;
+    background-color: var(--white-color);
   }
 }

@@ -21,7 +21,7 @@ body {
     background: #1e1e1e; /* цвет дорожки */
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #3392ff; /* цвет плашки */
+    background-color: var(--blue-color); /* цвет плашки */
   }
 }
 

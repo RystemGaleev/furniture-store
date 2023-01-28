@@ -64,18 +64,18 @@
 }
 .userIcon {
   border-radius: 50%;
-  background-color: #3392ff;
+  background-color: var(--blue-color);
   padding: 7px;
-  color: white;
+  color: var(--white-color);
 }
 
 .logout {
-  background-color: #3392ff;
+  background-color: var(--blue-color);
   width: 200px;
   height: 48px;
   font-size: 18px;
   font-weight: 500;
-  color: white;
+  color: var(--white-color);
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -87,8 +87,8 @@
 .name {
   font-size: 18px;
   font-weight: 500;
-  color: white;
-  border-right: 1px solid white;
+  color: var(--white-color);
+  border-right: 1px solid var(--white-color);
   padding-right: 10px;
   max-width: 90px;
   white-space: nowrap;
