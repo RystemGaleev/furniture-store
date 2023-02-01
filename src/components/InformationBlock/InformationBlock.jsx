@@ -2,8 +2,10 @@ import React from 'react';
 import style from './InformationBlock.module.scss';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export const InformationBlock = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   return (
     <div className={style.empty}>
@@ -32,11 +34,11 @@ export const InformationBlock = () => {
           fill="currentColor"
         />
       </svg>
-      <div className={style.title}>The basket is still empty</div>
-      <div className={style.descr}>The basket is waiting to be filled!</div>
+      <div className={style.title}>{t('informationBlock.title')}</div>
+      <div className={style.descr}>{t('informationBlock.descr')}</div>
       <button onClick={() => navigate('/')} className={style.button}>
         <AiOutlineArrowLeft className={style.back} size={24} />
-        Will continue shopping
+        {t('informationBlock.backBtn')}
       </button>
     </div>
   );

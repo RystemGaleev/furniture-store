@@ -9,8 +9,13 @@ import style from './SingleProduct.module.scss';
 import { Link } from 'react-router-dom';
 import { IconUi } from '../ui/IconUi';
 import { ProductComments } from '../ProductComments/ProductComments';
+import { useTranslation } from 'react-i18next';
+import { toast, ToastContainer } from 'react-toastify';
+import { TfiShoppingCart } from 'react-icons/tfi';
 
 export const SingleProduct = () => {
+  const { t } = useTranslation();
+
   const [singleProduct, setSingleProduct] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,9 +35,26 @@ export const SingleProduct = () => {
   }, []);
   const currentReview = reviews.filter((rev) => rev.id === id);
 
+  const AddedInCart = () => {
+    toast.info(t('notification.cart'), {
+      autoClose: 2000,
+      icon: <TfiShoppingCart size={30} color={'var(--blue-color)'} />,
+    });
+    dispatch(addToCart(singleProduct));
+  };
   return (
     <Layout>
       <div className="container">
+        <ToastContainer
+          closeOnClick={false}
+          pauseOnFocusLoss={false}
+          pauseOnHover={false}
+          position={'top-right'}
+          draggable={false}
+          limit={7}
+          closeButton={false}
+          toastStyle={{ width: '260px' }}
+        />
         <div className={style.wrapper}>
           <div className={style.product}>
             <div className={style.img}>
@@ -47,26 +69,23 @@ export const SingleProduct = () => {
               </div>
 
               <div className={style.rating}>
-                Rating <span>{singleProduct.rating}/5</span>
+                {t('singleProduct.rating')} <span>{singleProduct.rating}/5</span>
               </div>
               <div className={style.price}>
                 <div className={style.new}>
-                  Price: <span>${singleProduct.price}</span>
+                  {t('singleProduct.price')} <span>${singleProduct.price}</span>
                 </div>
                 {singleProduct.old ? (
                   <div className={style.old}>$ {singleProduct.old}</div>
                 ) : null}
               </div>
 
-              <button
-                onClick={() => dispatch(addToCart(singleProduct))}
-                className={style.add}
-              >
-                Add to cart
+              <button onClick={AddedInCart} className={style.add}>
+                {t('singleProduct.addBtn')}
                 <IconUi name="cart" cl={style.icon} />
               </button>
               <Link className={style.back} onClick={() => navigate(-1)}>
-                Вернуться назад
+                {t('singleProduct.backBtn')}
               </Link>
             </div>
           </div>

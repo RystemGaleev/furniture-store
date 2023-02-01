@@ -3,11 +3,13 @@ import { textAnimation } from '../../Animations/Animation';
 import { OrderCard } from '../../components/OrderCard/OrderCard';
 import { Layout } from '../../Layout/Layout';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+
 import './OrdersPage.scss';
 
 export const OrdersPage = () => {
+  const { t } = useTranslation();
   const { orders } = useSelector((state) => state.orders);
-  console.log(orders);
 
   return (
     <Layout>
@@ -19,11 +21,11 @@ export const OrdersPage = () => {
             whileInView="visible"
             className="title__h2"
           >
-            Orders page
+            {t('orders.title')}
           </motion.h2>
           <div className="orders__wrapper">
-            {orders?.map((item) => (
-              <OrderCard key={item.id} {...item} />
+            {orders?.map((item, index) => (
+              <OrderCard key={index} {...item} />
             ))}
           </div>
         </div>

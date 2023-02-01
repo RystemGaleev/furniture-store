@@ -11,8 +11,11 @@ import { IoEnterOutline } from 'react-icons/io5';
 import { IconUi } from '../ui/IconUi';
 import 'react-toastify/dist/ReactToastify.css';
 import style from './ProductCard.module.scss';
+import { useTranslation } from 'react-i18next';
 
 export const ProductCard = ({ img, id, price, old, title, collection, rating }) => {
+  const { t } = useTranslation();
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { products } = useSelector((state) => state.products);
@@ -31,7 +34,7 @@ export const ProductCard = ({ img, id, price, old, title, collection, rating }) 
   };
 
   const AddedInCart = () => {
-    toast.info('Product added to cart', {
+    toast.info(t('notification.cart'), {
       autoClose: 2000,
       icon: <TfiShoppingCart size={30} color={'var(--blue-color)'} />,
     });
@@ -39,7 +42,7 @@ export const ProductCard = ({ img, id, price, old, title, collection, rating }) 
   };
 
   const AddedInFavourite = () => {
-    toast.info('Product added to favourites', {
+    toast.info(t('notification.favourites'), {
       autoClose: 2000,
       icon: <TfiHeart size={30} color={'var(--blue-color)'} />,
     });
@@ -61,15 +64,15 @@ export const ProductCard = ({ img, id, price, old, title, collection, rating }) 
       <div className={style.content}>
         <div className={style.img}>
           <div className={style.banners}>
-            {old ? <div className={style.sale}>Sale</div> : null}
-            {collection ? <div className={style.new}>New</div> : null}
+            {old ? <div className={style.sale}> {t('productCard.sale')}</div> : null}
+            {collection ? <div className={style.new}>{t('productCard.new')}</div> : null}
           </div>
 
           <img src={img} alt={`product${id}`} />
         </div>
         <div className={style.tools}>
           <button onClick={redirectToProduct} className={style.check}>
-            View
+            {t('productCard.view')}
             <IoEnterOutline className={style.icon} size={30} />
           </button>
           <button onClick={AddedInCart} className={style.circle}>
@@ -83,7 +86,7 @@ export const ProductCard = ({ img, id, price, old, title, collection, rating }) 
       <div className={style.blockText}>
         <div className={style.title}>{title}</div>
         <div className={style.block}>
-          Price:
+          {t('productCard.price')}
           <div className={style.old}>{old ? `$${old}` : null}</div>
           <div className={style.price}>${price}</div>
         </div>

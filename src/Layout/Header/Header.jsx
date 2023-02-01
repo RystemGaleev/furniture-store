@@ -7,6 +7,7 @@ import { Navbar } from '../../components/Navbar/Navbar';
 
 import { CiDark, CiLight } from 'react-icons/ci';
 import style from './Header.module.scss';
+import { useTranslation } from 'react-i18next';
 
 export const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -21,6 +22,12 @@ export const Header = () => {
       console.log(error.message);
     }
   };
+
+  const { t, i18n } = useTranslation();
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
+
   return (
     <header className={style.header}>
       <div className="container">
@@ -47,14 +54,22 @@ export const Header = () => {
 
           <div className={style.right}>
             <Navbar />
+            <div className={style.languageBtns}>
+              <button className={style.language} onClick={() => changeLanguage('en')}>
+                EN
+              </button>
+              <button className={style.language} onClick={() => changeLanguage('ru')}>
+                RU
+              </button>
+            </div>
             <button onClick={toggleTheme} className={style.theme}>
               {theme === 'light' ? (
                 <div className={style.text}>
-                  <CiDark size={32} /> <p>Dark</p>
+                  <CiDark size={32} /> <p>{t('header.theme1')}</p>
                 </div>
               ) : (
                 <div className={style.text}>
-                  <CiLight size={32} /> <p>Light</p>
+                  <CiLight size={32} /> <p>{t('header.theme2')}</p>
                 </div>
               )}
             </button>
@@ -62,7 +77,7 @@ export const Header = () => {
               <div className={style.user}>
                 <button onClick={handleLogout} className={style.logout}>
                   <div className={style.name}>{user && user.displayName}</div>
-                  Logout
+                  {t('header.logout')}
                 </button>
               </div>
             ) : null}

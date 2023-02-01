@@ -16,9 +16,11 @@ import { getTotal } from '../../utils';
 import { frameAnimationY, textAnimation } from '../../Animations/Animation';
 import { motion } from 'framer-motion';
 import { TfiShoppingCart } from 'react-icons/tfi';
+import { useTranslation, Trans } from 'react-i18next';
 import './Cart.scss';
 
 export const CartPage = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.cart);
   const totalQuantity = getTotal(cart).totalQuantity;
@@ -29,7 +31,7 @@ export const CartPage = () => {
   const { modalOpen, setModalOpen } = useContext(ModalContext);
 
   const removeAllItem = () => {
-    toast.error('Deleting all products', {
+    toast.error(t('notification.removeAll'), {
       autoClose: 2000,
       icon: <TfiShoppingCart size={30} color={'#e74c3c'} />,
     });
@@ -51,10 +53,10 @@ export const CartPage = () => {
         isOpen={modalOpen.formModal}
         handleClose={() => setModalOpen({ ...modalOpen, formModal: false })}
         style={{
-          width: '600px',
+          maxWidth: '1000px',
           left: '50%',
           top: '50%',
-          height: '550px',
+          minHeight: '650px',
           backgroundColor: '#fff',
           transform: 'translate(-50%, -50%)',
           color: '#1e1e1e',
@@ -72,14 +74,20 @@ export const CartPage = () => {
         exit={{ scale: 0, opacity: 0 }}
       >
         <div className="container">
-          <motion.h2
-            variants={textAnimation}
-            initial="hidden"
-            whileInView="visible"
-            className="title__h2"
-          >
-            Shopping Cart page
-          </motion.h2>
+          <div className="clear">
+            <motion.h2
+              variants={textAnimation}
+              initial="hidden"
+              whileInView="visible"
+              className="title__h2"
+            >
+              {t('cart.title')}
+            </motion.h2>
+            <button onClick={removeAllItem} className="cart__checkout-remove">
+              {t('cart.clearBtn')}
+              <AiOutlineClose className="icon" size={22} />
+            </button>
+          </div>
           <div className="cart__wrapper">
             <div className="cart__items">
               {cart.length > 0 ? (
@@ -96,35 +104,32 @@ export const CartPage = () => {
               whileInView="visible"
             >
               <div className="cart__information-block">
-                <div className="cart__information-title">Chekcout</div>
-                <div className="cart__information-products">
-                  There are {totalQuantity} items in your cart
-                </div>
+                <div className="cart__information-title"> {t('cart.priceList')}</div>
+                <Trans className="cart__information-products" i18nKey="cart.quantity">
+                  {{ totalQuantity }}
+                </Trans>
               </div>
               <div className="cart__checkout">
                 <div className="cart__checkout-block">
-                  <div className="cart__checkout-descr">Price</div>
+                  <div className="cart__checkout-descr">{t('cart.price')}</div>
                   <div className="cart__checkout-price">${price}</div>
                 </div>
                 <div className="cart__checkout-block">
-                  <div className="cart__checkout-descr">Discount 15%</div>
+                  <div className="cart__checkout-descr">{t('cart.discount')}</div>
                   <div className="cart__checkout-price">${discount}</div>
                 </div>
                 <div className="cart__checkout-block">
-                  <div className="cart__checkout-descr">Total Price</div>
+                  <div className="cart__checkout-descr">{t('cart.totalPrice')}</div>
                   <div className="cart__checkout-price">${totalPrice}</div>
                 </div>
                 <div className="cart__checkout-btns">
                   <button
                     onClick={() => setModalOpen({ ...modalOpen, formModal: true })}
                     className="cart__checkout-buy"
+                    disabled={cart.length < 1}
                   >
-                    Place an order
+                    {t('cart.orderBtn')}
                     <AiOutlineCheck className="icon" size={22} />
-                  </button>
-                  <button onClick={removeAllItem} className="cart__checkout-remove">
-                    Clear cart
-                    <AiOutlineClose className="icon remove" size={22} />
                   </button>
                 </div>
               </div>

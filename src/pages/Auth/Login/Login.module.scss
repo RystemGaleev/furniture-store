@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 500px;
+  width: 530px;
 }
 .inputs {
   display: flex;
@@ -63,6 +63,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 490px;
 }
 .text {
   font-size: 26px;

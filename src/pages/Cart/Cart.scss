@@ -1,5 +1,10 @@
 .cart {
   padding-top: 160px;
+  .clear {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   &__wrapper {
     margin: 80px 0 120px;
@@ -20,6 +25,9 @@
     width: 420px;
     border: 1px solid var(--detail-color);
     padding: 30px 24px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--detail-color);
 
     &-block {
       display: flex;
@@ -31,11 +39,6 @@
       font-size: 26px;
       font-weight: 500;
       text-align: center;
-      color: var(--detail-color);
-    }
-    &-products {
-      font-size: 18px;
-      font-weight: 500;
       color: var(--detail-color);
     }
   }
@@ -65,10 +68,7 @@
       justify-content: space-between;
     }
     .icon {
-      color: #1b1a1a;
-      &.remove {
-        color: var(--white-color);
-      }
+      color: var(--white-color);
     }
     &-buy {
       display: flex;
@@ -83,7 +83,13 @@
       cursor: pointer;
       transition: all 0.2s ease-in-out;
       border-radius: 6px;
-      color: #1b1a1a;
+      color: var(--white-color);
+      background-color: var(--blue-color);
+      border: none;
+      &:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+      }
 
       &:hover {
         box-shadow: 4px 4px 8px 0px var(--shadow-color);
@@ -97,7 +103,8 @@
       align-items: center;
       gap: 6px;
       justify-content: center;
-      width: 150px;
+      max-width: 230px;
+      padding: 0 15px;
       height: 54px;
       font-size: 16px;
       font-weight: 600;

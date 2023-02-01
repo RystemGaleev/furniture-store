@@ -6,7 +6,6 @@ import { Navigation, Thumbs } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import './SliderForCard.scss';
 
 export const SliderForCard = ({ singleProduct }) => {
@@ -15,7 +14,7 @@ export const SliderForCard = ({ singleProduct }) => {
   return (
     <>
       <Swiper
-        className="slider-big"
+        className="sliderBig"
         modules={[Navigation, Thumbs]}
         spaceBetween={50}
         slidesPerView={1}
@@ -25,13 +24,13 @@ export const SliderForCard = ({ singleProduct }) => {
       >
         {singleProduct.slider &&
           singleProduct.slider.map((img, index) => (
-            <SwiperSlide className="slide-big" key={index}>
+            <SwiperSlide key={index}>
               <img src={img} alt={singleProduct.id} />
             </SwiperSlide>
           ))}
       </Swiper>
       <Swiper
-        className="slider-small"
+        className="sliderSmall"
         onSwiper={setActiveThumb}
         modules={[Navigation, Thumbs]}
         spaceBetween={40}
@@ -40,7 +39,7 @@ export const SliderForCard = ({ singleProduct }) => {
       >
         {singleProduct.slider &&
           singleProduct.slider.map((img, index) => (
-            <SwiperSlide className="slide-small" key={index}>
+            <SwiperSlide key={index}>
               <img src={img} alt={singleProduct.id} />
             </SwiperSlide>
           ))}

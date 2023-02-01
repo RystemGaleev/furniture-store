@@ -4,8 +4,10 @@ import { currentProduct } from '../../redux/SingleProductSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { IoEnterOutline } from 'react-icons/io5';
+import { useTranslation } from 'react-i18next';
 
 export const OrderCard = ({ img, id, price, old, title, quantity }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { products } = useSelector((state) => state.products);
@@ -31,16 +33,16 @@ export const OrderCard = ({ img, id, price, old, title, quantity }) => {
         </div>
         <div className={style.tools}>
           <button onClick={redirectToProduct} className={style.check}>
-            View
+            {t('productCard.view')}
             <IoEnterOutline className={style.icon} size={30} />
           </button>
-          {quantity}
+          <div className={style.quantity}>{quantity}</div>
         </div>
       </div>
       <div className={style.blockText}>
         <div className={style.title}>{title}</div>
         <div className={style.block}>
-          Price:
+          {t('productCard.price')}
           <div className={style.old}>{old ? `$${old}` : null}</div>
           <div className={style.price}>${price}</div>
         </div>

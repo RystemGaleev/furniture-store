@@ -19,13 +19,15 @@ body[data-theme='light'] {
   --toastify-icon-color-success: var(--blue-color) !important;
   --blue-color: #3392ff;
   --white-color: #fff;
+  --black-color: #1b1a1a;
 }
 
 .subtitle {
   font-weight: 400;
   font-size: 16px;
   text-transform: uppercase;
-  color: #1b1a1a;
+  color: var(--black-color);
+  margin-bottom: 16px;
 }
 
 .title__h2 {
@@ -61,21 +63,20 @@ body[data-theme='light'] {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 200px;
+  max-width: 300px;
   padding: 0 15px;
   height: 54px;
-  border: 1px solid #1b1a1a;
-  color: #1b1a1a;
+  border-radius: 6px;
+  color: var(--white-color);
   font-size: 20px;
   font-weight: 500;
-  background-color: transparent;
+  background-color: var(--blue-color);
   cursor: pointer;
   z-index: 5;
   transition: all 0.5s ease-in-out;
 
   &:hover {
-    color: #fff;
-    background-color: #1b1a1a;
+    background-color: var(--black-color);
   }
 
   &:active {

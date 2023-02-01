@@ -1,0 +1,118 @@
+{
+  "header": {
+    "theme1": "Dark",
+    "theme2": "Light",
+    "logout": "Logout"
+  },
+  "navbar": {
+    "home": "Home",
+    "favourites": "Favourites",
+    "orders": "My purchases"
+  },
+  "home": {
+    "welcome": "Welcome",
+    "title": "modern <strong>furniture</strong> <br/> to enjoy",
+    "descr": "Great design starts with an even better story",
+    "btn": "Start shopping"
+  },
+  "products": {
+    "title": "The most popular",
+    "search": "Search..."
+  },
+  "promo": {
+    "advantages1": "Unique Style",
+    "advantages2": "Practicality",
+    "advantages3": "Quality",
+    "advantages4": "Visualize",
+    "advantages5": "Custom Hardware",
+    "advantages6": "Environmentally Friendly",
+    "title": "Our advantages",
+    "slide1": "Better life, better design.",
+    "slide2": "Confidence starts at home.",
+    "slide3": "Exquisite interiors adapted to your needs.",
+    "slide4": "Interiors that reflect your style"
+  },
+  "productCard": {
+    "new": "New",
+    "sale": "Sale",
+    "view": "View",
+    "price": "Price :"
+  },
+  "singleProduct": {
+    "rating": "Rating",
+    "price": "Price :",
+    "addBtn": "Add to Cart",
+    "backBtn": "Return back"
+  },
+  "comments": {
+    "title1": "Leave your feedback about the product",
+    "title2": "Product Reviews",
+    "sendBtn": "Send",
+    "comment": "Your comment...",
+    "user": "User"
+  },
+  "favourites": {
+    "title": "Favourites"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "priceList": "Price list",
+    "quantity": "There are <1>{{totalQuantity}}</1> items in your cart",
+    "price": "Price:",
+    "discount": "Discount: 15%",
+    "totalPrice": "Total price",
+    "orderBtn": "Place an order",
+    "clearBtn": "Clear cart"
+  },
+  "informationBlock": {
+    "title": "The basket is still empty",
+    "descr": "The basket is waiting to be filled!",
+    "backBtn": "Continue shopping"
+  },
+  "orders": {
+    "title": "My purchases"
+  },
+  "form": {
+    "title": "Payment",
+    "card": "Card Number",
+    "date": "Expiration Date",
+    "policy": "Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.",
+    "payBtn": "Pay",
+    "city": "City",
+    "cityPl": "Enter your sity",
+    "country": "Сountry ",
+    "countryPl": "Enter your country",
+    "street": "Street",
+    "streetPl": "Enter your street",
+    "apartment": "Apartment ",
+    "apartmentPl": "Enter your apartment",
+    "cardErr": "Enter the correct card number",
+    "dateErr": "Enter the correct date",
+    "codeErr": "Enter the correct code",
+    "cityErr": "Enter the correct city",
+    "countryErr": "Enter the correct country",
+    "streetErr": "Enter the correct street",
+    "apartmentErr": "Enter the correct apartment"
+  },
+  "notification": {
+    "cart": "Product added to cart",
+    "favourites": "Product added to favourites",
+    "removeAll": "Deleting all products",
+    "removeCart": "Product removed from cart"
+  },
+  "auth": {
+    "login": "login",
+    "log": "login",
+    "descr": "Don't have an account yet?",
+    "registration": "Sign up",
+    "registr": "Sign up",
+    "title": "Welcome to our online store Interior",
+    "subtitle": "Please log in to go to the main page.",
+    "pass": "Please, enter your password",
+    "email": "Please, enter your email",
+    "name": "Please, enter your name",
+    "passText": "Password",
+    "emailText": "Email",
+    "nameText": "Name"
+  }
+}

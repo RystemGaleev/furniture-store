@@ -1,0 +1,29 @@
+.card {
+  width: 260px;
+  height: 150px;
+  padding: 0 20px;
+  color: var(--white-color);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(243.42deg, rgb(255 41 85 / 60%) 0%, #3392ff 100%);
+
+  gap: 10px;
+  border-radius: 6px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+}
+.icon {
+  border-radius: 50%;
+  border: 1px solid var(--white-color);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

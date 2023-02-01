@@ -6,9 +6,7 @@ export const Footer = () => {
     <footer className={style.footer}>
       <div className="container">
         <div className={style.wrapper}>
-          <div className={style.copyright}>
-            Copyright 2023 - Designed & Developed by Rystezy
-          </div>
+          <div className={style.copyright}>Designed & Developed by Rystezy</div>
           <div className={style.contacts}>
             <a
               rel="noreferrer"

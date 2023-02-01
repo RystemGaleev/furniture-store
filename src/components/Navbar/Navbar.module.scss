@@ -1,10 +1,7 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 30px;
-  &:nth-child(1) {
-    color: red !important;
-  }
+  gap: 40px;
 }
 .link,
 .cart,
@@ -31,7 +28,8 @@
   color: var(--white-color);
 }
 
-.favouriteQuantity {
+.favouriteQuantity,
+.ordersQuantity {
   position: absolute;
   top: -22px;
   right: -22px;

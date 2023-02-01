@@ -16,6 +16,19 @@
     -webkit-appearance: none;
   }
 }
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+.column {
+  min-width: 500px;
+}
+.columnRight {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 .formOpacity {
   position: relative;
   display: flex;
@@ -26,8 +39,13 @@
 }
 .block {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+.blockLeft {
+  display: flex;
   justify-content: space-between;
+  margin: 20px 0 80px;
 }
 
 .title {

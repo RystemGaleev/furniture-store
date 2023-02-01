@@ -21,6 +21,7 @@
   color: var(--detail-color);
   cursor: pointer;
   outline: none;
+  width: 120px;
 }
 .text {
   display: flex;
@@ -49,7 +50,7 @@
 .right {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
 }
 
 .user {
@@ -94,4 +95,20 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.languageBtns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.language {
+  border: none;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
 }

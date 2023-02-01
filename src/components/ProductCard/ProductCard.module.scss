@@ -5,7 +5,7 @@
   width: 270px;
   color: var(--white-color);
   box-shadow: var(--shadow-cards);
-  background-color: var(--white-color) smoke;
+  background-color: var(--white-color);
   border-radius: 10px;
   &:hover .tools {
     background: linear-gradient(
@@ -57,7 +57,7 @@
     background-color: #ff4343;
     color: var(--white-color);
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     border-radius: var(--radius);
     text-align: center;
   }

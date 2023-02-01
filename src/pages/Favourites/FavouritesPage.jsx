@@ -5,9 +5,11 @@ import { FavouritesCard } from '../../components/FavouritesCard/FavouritesCard';
 
 import { textAnimation } from '../../Animations/Animation';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './Favourites.scss';
 
 export const FavouritesPage = () => {
+  const { t } = useTranslation();
   const { favourites } = useSelector((state) => state.favourites);
   return (
     <Layout>
@@ -24,7 +26,7 @@ export const FavouritesPage = () => {
             whileInView="visible"
             className="title__h2"
           >
-            Favourites page
+            {t('favourites.title')}
           </motion.h2>
           <div className="favourites__wrapper">
             {favourites.map((item) => (

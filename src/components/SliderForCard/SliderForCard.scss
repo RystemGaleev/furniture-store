@@ -1,16 +1,14 @@
-.slider-big {
+.sliderBig {
+  width: 400px;
+  height: 250px;
   margin-bottom: 40px;
   position: relative;
-  width: 400px;
-  .swiper-slide {
-    height: 230px;
-    border: 1px solid transparent;
-    padding: 14px 20px;
-    cursor: grab;
-  }
+
   .swiper-slide-active {
     height: 230px;
     border: 1px solid var(--blue-color);
+    padding: 14px 20px;
+    cursor: grab;
   }
   .swiper-button-prev {
     left: 20px;
@@ -20,8 +18,7 @@
   }
 }
 
-.slider-small {
-  width: 400px;
+.sliderSmall {
   .swiper-slide-visible {
     border: 1px solid var(--detail-color);
   }

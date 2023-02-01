@@ -7,9 +7,11 @@ import { ModalContext } from '../../../context/ModalContext';
 import { InputControl } from '../../../components/InputControl/InputControl';
 import { Layout } from '../../../Layout/Layout';
 
+import { useTranslation } from 'react-i18next';
 import style from './Login.module.scss';
 
 export const Login = () => {
+  const { t } = useTranslation();
   const { modalOpen, setModalOpen } = useContext(ModalContext);
   const navigate = useNavigate();
   const [error, setError] = useState('');
@@ -52,37 +54,37 @@ export const Login = () => {
           <div className={style.wrapper}>
             <form onSubmit={handleSubmit} className={style.loginForm}>
               <div className={style.content}>
-                <div className={style.title}>Login</div>
+                <div className={style.title}> {t('auth.login')} </div>
                 <div className={style.inputs}>
                   <InputControl
-                    label="Email"
+                    label={t('auth.emailText')}
                     type="text"
-                    placeholder="Enter your email"
+                    placeholder={t('auth.email')}
                     onChange={(e) =>
                       setValues((prev) => ({ ...prev, email: e.target.value }))
                     }
                   />
                   <InputControl
-                    label="Password"
+                    label={t('auth.passText')}
                     type="password"
-                    placeholder="Enter Password"
+                    placeholder={t('auth.pass')}
                     onChange={(e) =>
                       setValues((prev) => ({ ...prev, password: e.target.value }))
                     }
                   />
                 </div>
                 <div className={style.error}>{error}</div>
-                <button className={style.btn}>Login</button>
+                <button className={style.btn}>{t('auth.log')}</button>
 
                 <div className={style.descr}>
-                  Don't have an account yet?
-                  <Link to="/signup">Sign Up</Link>
+                  {t('auth.descr')}
+                  <Link to="/signup"> {t('auth.registration')} </Link>
                 </div>
               </div>
             </form>
             <div className={style.textBlock}>
-              <div className={style.text}>Welcome to our online store Interior </div>
-              <div className={style.textSm}>Please log in to go to the main page. </div>
+              <div className={style.text}>{t('auth.title')}</div>
+              <div className={style.textSm}>{t('auth.subtitle')} </div>
             </div>
           </div>
         </div>

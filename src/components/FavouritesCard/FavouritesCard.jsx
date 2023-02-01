@@ -10,9 +10,11 @@ import { frameAnimationX } from '../../Animations/Animation';
 import { motion } from 'framer-motion';
 
 import { TfiHeart } from 'react-icons/tfi';
+import { useTranslation } from 'react-i18next';
 import style from './FavouritesCard.module.scss';
 
 export const FavouritesCard = ({ price, title, id, img, old }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { products } = useSelector((state) => state.products);
@@ -54,7 +56,7 @@ export const FavouritesCard = ({ price, title, id, img, old }) => {
         </div>
         <div className={style.tools}>
           <button onClick={redirectToProduct} className={style.check}>
-            View
+            {t('productCard.view')}
             <IoEnterOutline className={style.icon} size={30} />
           </button>
 
@@ -66,7 +68,7 @@ export const FavouritesCard = ({ price, title, id, img, old }) => {
       <div className={style.blockText}>
         <div className={style.title}>{title}</div>
         <div className={style.block}>
-          Price:
+          {t('productCard.price')}
           <div className={style.old}>{old ? `$${old}` : null}</div>
           <div className={style.price}>${price}</div>
         </div>

@@ -7,12 +7,14 @@ import { TfiShoppingCart } from 'react-icons/tfi';
 import { ToastContainer, toast } from 'react-toastify';
 import { motion } from 'framer-motion';
 import { frameAnimationX } from '../../Animations/Animation';
+import { useTranslation } from 'react-i18next';
 
 export const BasketCard = ({ id, price, img, title, quantity }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const removeItem = () => {
-    toast.error('Product removed from cart', {
+    toast.error(t('notification.removeCart'), {
       autoClose: 2000,
       icon: <TfiShoppingCart size={30} color={'#e74c3c'} />,
     });

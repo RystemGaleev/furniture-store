@@ -9,12 +9,24 @@ import { Layout } from '../../Layout/Layout';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
 import CustomModal from '../../components/CustomModal/CustomModal';
 import { Search } from '../../components/Search/Search';
+import { Slider } from '../../components/Slider/Slider';
+import { AdvantagesCard } from '../../components/AdvantagesCard/AdvantagesCard';
 
 import { motion } from 'framer-motion';
 import { textAnimation } from '../../Animations/Animation';
+import { Trans, useTranslation } from 'react-i18next';
+import {
+  TfiPaintRoller,
+  TfiThumbUp,
+  TfiMedallAlt,
+  TfiBlackboard,
+  TfiBrushAlt,
+  TfiShine,
+} from 'react-icons/tfi';
 import './Home.scss';
 
 export const HomePage = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const { user } = useContext(AuthContext);
@@ -30,6 +42,15 @@ export const HomePage = () => {
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
+
+  const advantages = [
+    { title: t('promo.advantages1'), icon: <TfiPaintRoller size={30} />, id: 1 },
+    { title: t('promo.advantages2'), icon: <TfiMedallAlt size={30} />, id: 2 },
+    { title: t('promo.advantages3'), icon: <TfiThumbUp size={30} />, id: 3 },
+    { title: t('promo.advantages4'), icon: <TfiBlackboard size={30} />, id: 4 },
+    { title: t('promo.advantages5'), icon: <TfiBrushAlt size={30} />, id: 5 },
+    { title: t('promo.advantages6'), icon: <TfiShine size={30} />, id: 6 },
+  ];
 
   return (
     <Layout>
@@ -54,21 +75,47 @@ export const HomePage = () => {
                 backgroundColor: 'var(--blue-color)',
               }}
             >
-              <div className="popup__title">Welcome {user.displayName}</div>
+              <div className="popup__title">
+                {t('home.welcome')} {user.displayName}
+              </div>
             </CustomModal>
 
             <div className="home__block">
               <div className="subtitle">INTERIOR</div>
-              <h1 className="home__title">Home Design</h1>
-
-              <i>Great design begins with an even greater story</i>
+              <Trans>
+                <h1 className="home__title">{t('home.title')}</h1>
+              </Trans>
+              <i>{t('home.descr')}</i>
               <HashLink smooth to="/#products" className="classic">
-                Shop now
+                {t('home.btn')}
               </HashLink>
             </div>
           </div>
         </div>
       </motion.section>
+
+      <section className="promo">
+        <div className="container">
+          <motion.h2
+            variants={textAnimation}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.3, delay: 0.2 }}
+            className="title__h2"
+          >
+            {t('promo.title')}
+          </motion.h2>
+          <div className="promo__wrapper">
+            <Slider />
+            <div className="promo__advantages">
+              {advantages.map((item) => (
+                <AdvantagesCard key={item.id} {...item} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="products" className="products">
         <div className="container">
           <div className="products__block">
@@ -79,7 +126,7 @@ export const HomePage = () => {
               transition={{ duration: 0.3, delay: 0.2 }}
               className="title__h2"
             >
-              The most popular
+              {t('products.title')}
             </motion.h2>
             <Search setSearchValue={setSearchValue} searchValue={searchValue} />
           </div>

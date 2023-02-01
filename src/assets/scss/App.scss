@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;900&display=swap');
 @import './variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap');
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
 
 * {
   margin: 0px;
@@ -9,8 +12,8 @@
 }
 
 body {
-  font-family: 'JetBrains Mono', monospace;
   font-family: 'Roboto Slab', serif;
+  font-family: 'JetBrains Mono', monospace;
   overflow-x: hidden;
   background-color: var(--bg-color);
   transition: background-color 0.5s ease-in-out;

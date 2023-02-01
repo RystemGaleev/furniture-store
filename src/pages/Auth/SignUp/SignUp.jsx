@@ -9,9 +9,12 @@ import { ModalContext } from '../../../context/ModalContext';
 import { Layout } from '../../../Layout/Layout';
 import { InputControl } from '../../../components/InputControl/InputControl';
 
+import { useTranslation } from 'react-i18next';
 import style from './SignUp.module.scss';
 
 export const SignUp = () => {
+  const { t } = useTranslation();
+
   const { modalOpen, setModalOpen } = useContext(ModalContext);
 
   const navigate = useNavigate();
@@ -85,27 +88,27 @@ export const SignUp = () => {
             />
             <form onSubmit={handleSubmit} className={style.formSignUp}>
               <div className={style.content}>
-                <div className={style.title}>Sign Up</div>
+                <div className={style.title}>{t('auth.registration')}</div>
                 <div className={style.inputs}>
                   <InputControl
-                    label="Name"
-                    placeholder="Enter your name"
+                    label={t('auth.nameText')}
+                    placeholder={t('auth.name')}
                     type="text"
                     onChange={(e) =>
                       setValues((prev) => ({ ...prev, name: e.target.value }))
                     }
                   />
                   <InputControl
-                    label="Email"
-                    placeholder="Enter your email"
+                    label={t('auth.emailText')}
+                    placeholder={t('auth.email')}
                     type="text"
                     onChange={(e) =>
                       setValues((prev) => ({ ...prev, email: e.target.value }))
                     }
                   />
                   <InputControl
-                    label="Password"
-                    placeholder="Enter Password"
+                    label={t('auth.passText')}
+                    placeholder={t('auth.pass')}
                     type="password"
                     onChange={(e) =>
                       setValues((prev) => ({ ...prev, password: e.target.value }))
@@ -113,16 +116,16 @@ export const SignUp = () => {
                   />
                 </div>
                 <div className={style.error}>{error}</div>
-                <button className={style.submit}>Sign Up</button>
+                <button className={style.submit}>{t('auth.registr')}</button>
 
                 <div className={style.descr}>
-                  Already have an account? <Link to="/login">Login</Link>
+                  {t('auth.descr')} <Link to="/login">{t('auth.login')}</Link>
                 </div>
               </div>
             </form>
             <div className={style.textBlock}>
-              <div className={style.text}>Welcome to our online store Interior </div>
-              <div className={style.textSm}>Please log in to go to the main page. </div>
+              <div className={style.text}>{t('auth.title')} </div>
+              <div className={style.textSm}>{t('auth.subtitle')} </div>
             </div>
           </div>
         </div>
