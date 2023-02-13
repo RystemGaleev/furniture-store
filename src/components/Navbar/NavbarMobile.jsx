@@ -1,18 +1,18 @@
-import { Link } from 'react-router-dom';
 import { getTotal } from '../../utils';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { IconUi } from '../ui/IconUi';
 import { useTranslation } from 'react-i18next';
-import style from './Navbar.module.scss';
+import { LanguageToggler } from '../LanguageToggler/LanguageToggler';
+import { ThemeToggler } from '../ThemeToggler/ThemeToggler';
+import style from './NavbarMobile.module.scss';
+import { UserAccount } from '../UserAccount/UserAccount';
 
-export const Navbar = () => {
+export const NavbarMobile = ({ user, handleLogout }) => {
   const { t } = useTranslation();
 
   const { cart } = useSelector((state) => state.cart);
   const { favourites } = useSelector((state) => state.favourites);
   const { orders } = useSelector((state) => state.orders);
-
   return (
     <nav className={style.nav}>
       <NavLink
@@ -39,11 +39,18 @@ export const Navbar = () => {
           <div className={style.ordersQuantity}>{orders.length}</div>
         ) : null}
       </NavLink>
-      <Link to="/cart" className={style.cart}>
-        <IconUi name="cart" cl={style.icon} />
-
-        <div className={style.quantity}>{getTotal(cart).totalQuantity}</div>
-      </Link>
+      <NavLink
+        to="/cart"
+        className={({ isActive }) => (isActive ? style.linkActive : style.link)}
+      >
+        {t('navbar.cart')}
+        <div className={style.cartQuantity}>{getTotal(cart).totalQuantity}</div>
+      </NavLink>
+      <div className={style.tools}>
+        <ThemeToggler />
+        <LanguageToggler />
+      </div>
+      <UserAccount handleLogout={handleLogout} user={user} />
     </nav>
   );
 };

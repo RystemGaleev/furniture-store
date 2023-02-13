@@ -1,0 +1,18 @@
+.theme {
+  background-color: transparent;
+  border: none;
+  color: var(--detail-color);
+  cursor: pointer;
+  outline: none;
+  width: 120px;
+}
+.text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}

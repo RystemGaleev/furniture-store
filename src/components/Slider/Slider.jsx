@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, EffectFade } from 'swiper';
 
-import './Slider.scss';
 import { useTranslation } from 'react-i18next';
+import './Slider.scss';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 

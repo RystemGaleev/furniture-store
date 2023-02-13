@@ -15,24 +15,6 @@
   justify-content: space-between;
 }
 
-.theme {
-  background-color: transparent;
-  border: none;
-  color: var(--detail-color);
-  cursor: pointer;
-  outline: none;
-  width: 120px;
-}
-.text {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  p {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 20px;
-  }
-}
 .logo {
   display: flex;
   align-items: center;
@@ -53,62 +35,43 @@
   gap: 30px;
 }
 
-.user {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-.userInfo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.userIcon {
-  border-radius: 50%;
-  background-color: var(--blue-color);
-  padding: 7px;
-  color: var(--white-color);
-}
-
-.logout {
-  background-color: var(--blue-color);
-  width: 200px;
-  height: 48px;
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--white-color);
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-.name {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--white-color);
-  border-right: 1px solid var(--white-color);
-  padding-right: 10px;
-  max-width: 90px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11111;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(-100%);
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  &.active {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
 
-.languageBtns {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+.overlay_content {
+  position: relative;
+  width: 300px;
+  height: 100vh;
+  background-color: var(--bg-color);
+  transform: translateX(-100%);
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  &.active {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
-.language {
-  border: none;
-  background-color: var(--blue-color);
-  color: var(--white-color);
-  font-size: 16px;
-  font-weight: 500;
-  padding: 8px;
-  border-radius: 6px;
+
+.close_icon {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  color: var(--detail-color);
   cursor: pointer;
 }

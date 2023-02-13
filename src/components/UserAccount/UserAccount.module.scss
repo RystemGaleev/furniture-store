@@ -1,0 +1,33 @@
+.user {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--white-color);
+  border-right: 1px solid var(--white-color);
+  padding-right: 10px;
+  max-width: 90px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logout {
+  background-color: var(--blue-color);
+  width: 200px;
+  height: 48px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--white-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

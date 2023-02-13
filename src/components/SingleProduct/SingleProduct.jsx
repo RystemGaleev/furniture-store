@@ -33,6 +33,7 @@ export const SingleProduct = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  console.log(singleProduct);
   const currentReview = reviews.filter((rev) => rev.id === id);
 
   const AddedInCart = () => {

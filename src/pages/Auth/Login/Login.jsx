@@ -36,12 +36,12 @@ export const Login = () => {
       navigate('/');
       const startTimer = () => {
         const timer = setTimeout(() => {
-          setModalOpen({ ...modalOpen, welcomModal: false });
+          setModalOpen({ ...modalOpen, welcomeModal: false });
         }, 3000);
         return () => clearTimeout(timer);
       };
       startTimer();
-      setModalOpen({ ...modalOpen, welcomModal: true });
+      setModalOpen({ ...modalOpen, welcomeModal: true });
     } catch (error) {
       catchAuthError(error, setError);
     }

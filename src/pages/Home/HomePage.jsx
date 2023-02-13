@@ -44,12 +44,36 @@ export const HomePage = () => {
   }, [dispatch]);
 
   const advantages = [
-    { title: t('promo.advantages1'), icon: <TfiPaintRoller size={30} />, id: 1 },
-    { title: t('promo.advantages2'), icon: <TfiMedallAlt size={30} />, id: 2 },
-    { title: t('promo.advantages3'), icon: <TfiThumbUp size={30} />, id: 3 },
-    { title: t('promo.advantages4'), icon: <TfiBlackboard size={30} />, id: 4 },
-    { title: t('promo.advantages5'), icon: <TfiBrushAlt size={30} />, id: 5 },
-    { title: t('promo.advantages6'), icon: <TfiShine size={30} />, id: 6 },
+    {
+      title: t('promo.advantages1'),
+      icon: <TfiPaintRoller color={'var(--blue-color)'} size={30} />,
+      id: 1,
+    },
+    {
+      title: t('promo.advantages2'),
+      icon: <TfiMedallAlt color={'var(--blue-color)'} size={30} />,
+      id: 2,
+    },
+    {
+      title: t('promo.advantages3'),
+      icon: <TfiThumbUp color={'var(--blue-color)'} size={30} />,
+      id: 3,
+    },
+    {
+      title: t('promo.advantages4'),
+      icon: <TfiBlackboard color={'var(--blue-color)'} size={30} />,
+      id: 4,
+    },
+    {
+      title: t('promo.advantages5'),
+      icon: <TfiBrushAlt color={'var(--blue-color)'} size={30} />,
+      id: 5,
+    },
+    {
+      title: t('promo.advantages6'),
+      icon: <TfiShine color={'var(--blue-color)'} size={30} />,
+      id: 6,
+    },
   ];
 
   return (
@@ -63,8 +87,8 @@ export const HomePage = () => {
         <div className="container">
           <div className="home__wrapper">
             <CustomModal
-              isOpen={modalOpen.welcomModal}
-              handleClose={() => setModalOpen({ ...modalOpen, welcomModal: false })}
+              isOpen={modalOpen.welcomeModal}
+              handleClose={() => setModalOpen({ ...modalOpen, welcomeModal: false })}
               color={'transparent'}
               style={{
                 minWidth: '340px',

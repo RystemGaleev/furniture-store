@@ -7,7 +7,8 @@
   "navbar": {
     "home": "Home",
     "favourites": "Favourites",
-    "orders": "My purchases"
+    "orders": "My purchases",
+    "cart": "Cart"
   },
   "home": {
     "welcome": "Welcome",
