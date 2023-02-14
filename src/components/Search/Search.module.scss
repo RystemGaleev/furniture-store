@@ -1,3 +1,5 @@
+@import '../../assets/scss/mixin';
+
 .searchBlock {
   position: relative;
 }
@@ -5,7 +7,7 @@
   outline: none;
   padding: 12px 20px;
   height: 50px;
-  width: 580px;
+  width: 480px;
   border: 1px solid var(--detail-color);
   background-color: transparent;
   color: var(--detail-color);
@@ -22,4 +24,18 @@
   transform: translateY(-50%);
   cursor: pointer;
   color: var(--detail-color);
+}
+
+@include lg {
+  .search {
+    width: 300px;
+  }
+}
+
+@include md {
+  .search {
+    width: 100%;
+  }
+}
+@include sm {
 }

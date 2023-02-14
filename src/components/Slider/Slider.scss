@@ -1,3 +1,5 @@
+@import '../../assets/scss/mixin.scss';
+
 .slider {
   display: flex;
   align-items: flex-start;
@@ -9,7 +11,8 @@
     width: 560px;
     height: 490px;
 
-    .swiper-button-prev {
+    .swiper-button-prev,
+    .swiper-button-next {
       left: 20px;
       top: 50%;
       transform: translateY(-50%);
@@ -23,19 +26,13 @@
         font-weight: 500;
       }
     }
+
     .swiper-button-next {
       right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--black-color);
-      background-color: rgba(255, 255, 255, 0.6);
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      &:after {
-        font-size: 30px;
-        font-weight: 500;
-      }
+      left: auto;
+    }
+    .swiper-button-prev {
+      left: 20px;
     }
   }
   &__title {
@@ -62,6 +59,32 @@
       height: 100%;
       object-fit: cover;
       border-radius: 6px;
+    }
+  }
+}
+
+@include lg {
+  .slider {
+    &__wrapper {
+      width: 440px;
+      height: 370px;
+    }
+  }
+}
+
+@include sm {
+  .slider {
+    &__wrapper {
+      width: 320px;
+      height: 270px;
+    }
+    &__title {
+      font-size: 16px;
+      width: calc(100% - 20px);
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: 70%;
     }
   }
 }

@@ -74,20 +74,14 @@ export const CartPage = () => {
         exit={{ scale: 0, opacity: 0 }}
       >
         <div className="container">
-          <div className="clear">
-            <motion.h2
-              variants={textAnimation}
-              initial="hidden"
-              whileInView="visible"
-              className="title__h2"
-            >
-              {t('cart.title')}
-            </motion.h2>
-            <button onClick={removeAllItem} className="cart__checkout-remove">
-              {t('cart.clearBtn')}
-              <AiOutlineClose className="icon" size={22} />
-            </button>
-          </div>
+          <motion.h2
+            variants={textAnimation}
+            initial="hidden"
+            animate="visible"
+            className="title__h2"
+          >
+            {t('cart.title')}
+          </motion.h2>
           <div className="cart__wrapper">
             <div className="cart__items">
               {cart.length > 0 ? (
@@ -105,9 +99,9 @@ export const CartPage = () => {
             >
               <div className="cart__information-block">
                 <div className="cart__information-title"> {t('cart.priceList')}</div>
-                <Trans className="cart__information-products" i18nKey="cart.quantity">
-                  {{ totalQuantity }}
-                </Trans>
+                <div className="cart__information-products">
+                  <Trans i18nKey="cart.quantity">{{ totalQuantity }}</Trans>
+                </div>
               </div>
               <div className="cart__checkout">
                 <div className="cart__checkout-block">
@@ -130,6 +124,10 @@ export const CartPage = () => {
                   >
                     {t('cart.orderBtn')}
                     <AiOutlineCheck className="icon" size={22} />
+                  </button>
+                  <button onClick={removeAllItem} className="cart__checkout-remove">
+                    {t('cart.clearBtn')}
+                    <AiOutlineClose className="icon" size={22} />
                   </button>
                 </div>
               </div>

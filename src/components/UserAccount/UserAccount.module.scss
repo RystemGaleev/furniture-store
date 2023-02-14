@@ -1,3 +1,5 @@
+@import '../../assets/scss/mixin';
+
 .user {
   display: flex;
   align-items: center;
@@ -17,9 +19,9 @@
 }
 
 .logout {
+  max-width: 200px;
+  padding: 12px 20px;
   background-color: var(--blue-color);
-  width: 200px;
-  height: 48px;
   font-size: 18px;
   font-weight: 500;
   color: var(--white-color);
@@ -30,4 +32,9 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+
+@include md {
+}
+@include sm {
 }

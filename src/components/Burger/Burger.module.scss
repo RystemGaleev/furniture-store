@@ -1,8 +1,12 @@
+@import '../../assets//scss/mixin';
+
 .burger {
   position: relative;
   width: 38px;
   height: 14px;
   cursor: pointer;
+  display: none;
+  visibility: hidden;
 }
 .line,
 .line_active {
@@ -35,4 +39,18 @@
     top: 5px;
     transform: rotate(-45deg);
   }
+}
+
+@include xl {
+  .burger {
+    display: block;
+    visibility: visible;
+  }
+}
+@include lg {
+}
+
+@include md {
+}
+@include sm {
 }

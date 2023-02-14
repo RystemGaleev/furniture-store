@@ -26,7 +26,7 @@ export const BasketCard = ({ id, price, img, title, quantity }) => {
       className={style.item}
       variants={frameAnimationX}
       initial="hidden"
-      whileInView="visible"
+      animate="visible"
       transition={{ duration: 0.4, delay: 0.3 }}
     >
       <div className={style.img}>
@@ -41,29 +41,35 @@ export const BasketCard = ({ id, price, img, title, quantity }) => {
         limit={7}
         closeButton={false}
       />
-      <div className={style.price}>${price * quantity}</div>
-      <div className={style.title}>{title}</div>
-      <div className={style.tools}>
-        <div className={style.block}>
-          <button className={style.btn}>
-            <AiOutlineMinus
-              onClick={() => dispatch(decrementProduct(id))}
-              className={style.icon}
-              size={28}
-            />
-          </button>
-          <div className={style.quantity}>{quantity}</div>
-          <button className={style.btn}>
-            <AiOutlinePlus
-              onClick={() => dispatch(incrementProduct(id))}
-              className={style.icon}
+      <div className={style.mobile}>
+        <div className={style.price}>${price * quantity}</div>
+        <div className={style.title}>{title}</div>
+        <div className={style.tools}>
+          <div className={style.block}>
+            <button className={style.btn}>
+              <AiOutlineMinus
+                onClick={() => dispatch(decrementProduct(id))}
+                className={style.icon}
+                size={28}
+              />
+            </button>
+            <div className={style.quantity}>{quantity}</div>
+            <button className={style.btn}>
+              <AiOutlinePlus
+                onClick={() => dispatch(incrementProduct(id))}
+                className={style.icon}
+                size={28}
+              />
+            </button>
+          </div>
+          <button className={`${style.btn} ${style.remove}`}>
+            <AiOutlineClose
+              onClick={removeItem}
+              className={`${style.icon} ${style.remove}`}
               size={28}
             />
           </button>
         </div>
-        <button className={style.btn}>
-          <AiOutlineClose onClick={removeItem} className={style.icon} size={28} />
-        </button>
       </div>
     </motion.div>
   );

@@ -1,3 +1,5 @@
+@import '../../assets/scss/mixin';
+
 .card {
   width: 260px;
   height: 150px;
@@ -30,4 +32,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@include xl {
+  .card {
+    width: 152px;
+  }
+  .title {
+    font-size: 16px;
+  }
+}
+@include lg {
+  .card {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@include md {
+  .card {
+    max-width: 240px;
+  }
+}
+@include sm {
 }

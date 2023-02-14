@@ -1,3 +1,5 @@
+@import './mixin';
+
 body[data-theme='dark'] {
   --bg-color: #2a2f36;
   --detail-color: #e5e5e6;
@@ -20,14 +22,18 @@ body[data-theme='light'] {
   --blue-color: #3392ff;
   --white-color: #fff;
   --black-color: #1b1a1a;
+  --red-color: #fc3e3e;
 }
 
 .subtitle {
   font-weight: 400;
   font-size: 16px;
   text-transform: uppercase;
-  color: var(--black-color);
+  color: var(--white-color);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--white-color);
   margin-bottom: 16px;
+  display: inline-block;
 }
 
 .title__h2 {
@@ -36,11 +42,12 @@ body[data-theme='light'] {
   font-weight: 600;
   color: var(--detail-color);
   padding-left: 20px;
+  margin-left: 30px;
 
   &::before {
     content: '';
     position: absolute;
-    bottom: -30px;
+    bottom: -40px;
     left: -0px;
     width: 1px;
     height: 120px;
@@ -51,7 +58,7 @@ body[data-theme='light'] {
     content: '';
     position: absolute;
     top: -10px;
-    left: -30px;
+    left: -20px;
     width: 120px;
     height: 1px;
     background-color: var(--detail-color);
@@ -81,5 +88,34 @@ body[data-theme='light'] {
 
   &:active {
     transform: scale(1.1);
+  }
+}
+
+@include lg {
+  .title__h2 {
+    font-size: 30px;
+    &::before {
+      height: 100px;
+      bottom: -30px;
+    }
+
+    &::after {
+      width: 100px;
+    }
+  }
+}
+
+@include sm {
+  .title__h2 {
+    font-size: 26px;
+
+    &::before {
+      height: 80px;
+      bottom: -20px;
+    }
+
+    &::after {
+      width: 80px;
+    }
   }
 }

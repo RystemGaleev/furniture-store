@@ -23,7 +23,7 @@ export const FavouritesPage = () => {
           <motion.h2
             variants={textAnimation}
             initial="hidden"
-            whileInView="visible"
+            animate="visible"
             className="title__h2"
           >
             {t('favourites.title')}

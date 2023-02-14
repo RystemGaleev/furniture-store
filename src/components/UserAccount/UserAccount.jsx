@@ -10,7 +10,7 @@ export const UserAccount = ({ handleLogout, user }) => {
         <div className={style.user}>
           <button onClick={handleLogout} className={style.logout}>
             <div className={style.name}>{user && user.displayName}</div>
-            {t('header.logout')}
+            <span>{t('header.logout')}</span>
           </button>
         </div>
       ) : null}

@@ -43,7 +43,7 @@ export const Login = () => {
       startTimer();
       setModalOpen({ ...modalOpen, welcomeModal: true });
     } catch (error) {
-      catchAuthError(error, setError);
+      catchAuthError(error, setError, t);
     }
   };
 
@@ -73,7 +73,7 @@ export const Login = () => {
                     }
                   />
                 </div>
-                <div className={style.error}>{error}</div>
+                {error.length > 0 ? <div className={style.error}>{error}</div> : null}
                 <button className={style.btn}>{t('auth.log')}</button>
 
                 <div className={style.descr}>
@@ -82,10 +82,6 @@ export const Login = () => {
                 </div>
               </div>
             </form>
-            <div className={style.textBlock}>
-              <div className={style.text}>{t('auth.title')}</div>
-              <div className={style.textSm}>{t('auth.subtitle')} </div>
-            </div>
           </div>
         </div>
       </div>

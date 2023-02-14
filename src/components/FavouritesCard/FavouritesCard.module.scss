@@ -1,3 +1,5 @@
+@import '../../assets/scss/mixin.scss';
+
 .card {
   position: relative;
   display: flex;
@@ -121,5 +123,16 @@
     font-size: 16px;
     color: #737373;
     text-decoration: line-through;
+  }
+}
+
+@include md {
+  .card {
+    width: 240px;
+  }
+}
+@include sm {
+  .card {
+    width: 300px;
   }
 }

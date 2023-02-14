@@ -12,8 +12,7 @@
   },
   "home": {
     "welcome": "Welcome",
-    "title": "modern <strong>furniture</strong> <br/> to enjoy",
-    "descr": "Great design starts with an even better story",
+    "title": "modern <br/><strong>furniture</strong> <br/> to enjoy",
     "btn": "Start shopping"
   },
   "products": {
@@ -21,12 +20,12 @@
     "search": "Search..."
   },
   "promo": {
-    "advantages1": "Unique Style",
-    "advantages2": "Practicality",
-    "advantages3": "Quality",
-    "advantages4": "Visualize",
-    "advantages5": "Custom Hardware",
-    "advantages6": "Environmentally Friendly",
+    "advantages1": "Ecological",
+    "advantages2": "Durable",
+    "advantages3": "Universal",
+    "advantages4": "Modern",
+    "advantages5": "Comfortable",
+    "advantages6": "Available",
     "title": "Our advantages",
     "slide1": "Better life, better design.",
     "slide2": "Confidence starts at home.",
@@ -115,5 +114,14 @@
     "passText": "Password",
     "emailText": "Email",
     "nameText": "Name"
+  },
+  "authError": {
+    "emailCorrect": "Enter a valid email",
+    "emailUsed": "This email is already in use",
+    "emailNoSelect": "Enter your email",
+    "require": "All fields are required",
+    "passLength": "The password must contain more than 8 characters",
+    "passCorrect": "Enter the correct password",
+    "userUndefined": "There is no such user4555555555"
   }
 }

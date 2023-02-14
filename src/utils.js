@@ -9,28 +9,28 @@ export const getTotal = (items) => {
   return { totalPrice, totalQuantity };
 };
 
-export const catchAuthError = (error, setError) => {
+export const catchAuthError = (error, setError, t) => {
   switch (error.code) {
     case 'auth/invalid-email':
-      setError('Enter a valid email');
+      setError(t('authError.emailCorrect'));
       break;
     case 'auth/email-already-in-use':
-      setError('This mail is already in use');
+      setError(t('authError.emailUsed'));
       break;
     case 'auth/internal-error':
-      setError('All fields are required');
+      setError(t('authError.require'));
       break;
     case 'auth/weak-password':
-      setError('The password must contain more than 8 characters');
+      setError(t('authError.passLength'));
       break;
     case 'auth/user-not-found':
-      setError('This user does not exist');
+      setError(t('authError.userUndefined'));
       break;
     case 'auth/wrong-password':
-      setError('Enter the correct password');
+      setError(t('authError.passCorrect'));
       break;
     case 'auth/missing-email':
-      setError('Enter your email');
+      setError(t('authError.emailNoSelect'));
       break;
 
     default:

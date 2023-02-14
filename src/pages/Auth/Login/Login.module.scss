@@ -1,3 +1,4 @@
+@import '../../../assets/scss/mixin';
 .login {
   width: 100vw;
   height: 100vh;
@@ -5,12 +6,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.wrapper {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 60px;
 }
 
 .loginForm {
@@ -21,7 +16,7 @@
   text-align: center;
   font-size: 36px;
   font-weight: 600;
-  color: #1e1e1e;
+  color: var(--black-color);
 }
 .content {
   padding: 20px 30px;
@@ -39,12 +34,11 @@
 .descr {
   font-size: 18px;
   font-weight: 500;
-  color: #1e1e1e;
+  color: var(--black-color);
   a {
     font-size: 20px;
     color: var(--white-color);
     font-weight: 500;
-    margin-left: 10px;
     text-decoration: underline;
     text-underline-offset: 6px;
   }
@@ -59,6 +53,13 @@
   height: 50px;
   cursor: pointer;
 }
+.error {
+  color: var(--black-color);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline 1px var(--red-color);
+  text-underline-offset: 5px;
+}
 .textBlock {
   display: flex;
   flex-direction: column;
@@ -68,12 +69,41 @@
 .text {
   font-size: 26px;
   font-weight: 600;
-  color: #1e1e1e;
+  color: var(--black-color);
   text-align: center;
 }
 .textSm {
   font-size: 20px;
   font-weight: 500;
-  color: #1e1e1e;
+  color: var(--black-color);
   text-align: center;
+}
+
+@include xl {
+  .inputs {
+    gap: 20px;
+  }
+}
+@include lg {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@include sm {
+  .content {
+    width: 100%;
+    padding: 14px 5px;
+  }
+  .descr {
+    font-size: 14px;
+    a {
+      font-size: 16px;
+    }
+  }
+  .title {
+    font-size: 26px;
+  }
 }

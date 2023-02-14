@@ -1,14 +1,21 @@
+@import '../../assets/scss/mixin.scss';
+
 .item {
   position: relative;
   display: flex;
+  gap: 20px;
   align-items: center;
-  gap: 40px;
   border: 1px solid var(--detail-color);
   padding: 14px 20px;
   max-width: 700px;
   border-radius: 6px;
 }
 
+.mobile {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 .tools {
   position: absolute;
   display: flex;
@@ -23,24 +30,21 @@
   align-items: center;
 }
 
-.price {
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--detail-color);
-}
-
 .btn {
   background-color: transparent;
   outline: none;
   border: none;
 }
-
+.remove {
+  color: var(--red-color) !important;
+}
+.price,
 .title,
 .quantity {
   font-size: 22px;
   color: var(--detail-color);
   font-weight: 600;
-  max-width: 200px;
+  max-width: 180px;
   white-space: nowrap;
   overflow: hidden;
   padding: 5px;
@@ -59,5 +63,61 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+}
+
+@include xl {
+  .item {
+    gap: 10px;
+  }
+  .title,
+  .quantity {
+    font-size: 20px;
+    max-width: 100px;
+  }
+  .tools {
+    gap: 30px;
+  }
+}
+@include lg {
+  .item {
+    gap: 30px;
+  }
+  .tools {
+    gap: 50px;
+  }
+}
+
+@include md {
+  .item {
+    width: 100%;
+    padding: 12px 14px;
+    gap: 5px;
+  }
+  .tools {
+    gap: 20px;
+  }
+  .title {
+    max-width: 80px;
+  }
+}
+@include sm {
+  .title {
+    display: none;
+  }
+
+  .item {
+    gap: 15px;
+  }
+  .mobile {
+    flex-direction: column;
+  }
+  .tools {
+    position: static;
+  }
+  .remove {
+    position: absolute;
+    right: 10px;
+    top: 10px;
   }
 }

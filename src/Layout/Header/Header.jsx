@@ -1,16 +1,13 @@
-import { useContext, useState } from 'react';
-import { AuthContext } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { Navbar } from '../../components/Navbar/Navbar';
 import { NavbarMobile } from '../../components/Navbar/NavbarMobile';
-import { ThemeToggler } from '../../components/ThemeToggler/ThemeToggler';
-import { LanguageToggler } from '../../components/LanguageToggler/LanguageToggler';
 import { Burger } from '../../components/Burger/Burger';
-import { UserAccount } from '../../components/UserAccount/UserAccount';
 
 import { AiOutlineClose } from 'react-icons/ai';
 import style from './Header.module.scss';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 export const Header = () => {
   const [burger, setBurger] = useState(false);
@@ -25,7 +22,6 @@ export const Header = () => {
       console.log(error.message);
     }
   };
-
   const openMenu = () => {
     setBurger(!burger);
   };
@@ -70,10 +66,8 @@ export const Header = () => {
 
             <div className={style.right}>
               <Navbar />
-              <LanguageToggler />
-              <ThemeToggler />
+
               <Burger openMenu={openMenu} burger={burger} />
-              <UserAccount handleLogout={handleLogout} user={user} />
             </div>
           </div>
         </div>

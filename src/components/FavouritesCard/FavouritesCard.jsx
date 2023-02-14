@@ -36,7 +36,7 @@ export const FavouritesCard = ({ price, title, id, img, old }) => {
     <motion.div
       variants={frameAnimationX}
       initial="hidden"
-      whileInView="visible"
+      animate="visible"
       transition={{ duration: 0.4, delay: 0.3 }}
       className={style.card}
     >

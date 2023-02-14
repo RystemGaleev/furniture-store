@@ -1,14 +1,10 @@
+@import '../../assets/scss/mixin.scss';
+
 .home {
-  background: url('../../../public/image/back.jpg') right center/cover no-repeat;
+  background: url('../../../public/image/background.jpg') center center/cover no-repeat;
   height: 100vh;
-  padding-top: 240px;
-  i {
-    font-size: 16px;
-    font-weight: 400;
-    margin: 14px 0 40px;
-    display: inline-block;
-    color: var(--black-color);
-  }
+  padding-top: 180px;
+
   &__block {
     max-width: 800px;
     margin-left: 100px;
@@ -19,33 +15,15 @@
     font-size: 50px;
     font-weight: 500;
     text-transform: uppercase;
-    color: var(--black-color);
+    color: var(--white-color);
     line-height: 70px;
+    margin-bottom: 40px;
+    font-family: 'Roboto Slab';
 
     strong {
       color: var(--white-color);
-      background-color: var(--blue-color);
-      padding: 2px 10px;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: -130px;
-      left: -20px;
-      width: 1px;
-      height: 340px;
-      background-color: var(--black-color);
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      top: -50px;
-      left: -60px;
-      width: 340px;
-      height: 1px;
-      background-color: var(--black-color);
+      text-shadow: var(--blue-color) 5px 2px 2px;
+      font-weight: 500;
     }
   }
 }
@@ -56,6 +34,8 @@
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+
     gap: 30px;
     margin: 80px 0 120px;
   }
@@ -68,7 +48,7 @@
 
 .promo {
   min-height: 900px;
-  padding-top: 150px;
+  padding-top: 100px;
   &__wrapper {
     display: flex;
     align-items: flex-start;
@@ -81,5 +61,67 @@
     gap: 20px;
     align-items: center;
     flex: 1;
+  }
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@include xl {
+  .promo {
+    min-height: 700px;
+    &__wrapper {
+      gap: 40px;
+    }
+  }
+  .home {
+    &__block {
+      margin-left: 0;
+    }
+  }
+}
+@include lg {
+  .promo {
+    &__icon {
+      width: 20px;
+      height: 20px;
+    }
+    &__advantages {
+      gap: 14px;
+      height: 50px;
+    }
+  }
+}
+
+@include md {
+  .promo {
+    &__wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__advantages {
+      justify-content: center;
+    }
+  }
+  .products {
+    &__block {
+      flex-direction: column;
+      align-items: unset;
+      gap: 50px;
+    }
+  }
+}
+@include sm {
+  .home {
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__title {
+      font-size: 28px;
+      line-height: 36px;
+    }
   }
 }

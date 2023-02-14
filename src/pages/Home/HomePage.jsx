@@ -46,32 +46,32 @@ export const HomePage = () => {
   const advantages = [
     {
       title: t('promo.advantages1'),
-      icon: <TfiPaintRoller color={'var(--blue-color)'} size={30} />,
+      icon: <TfiPaintRoller color={'var(--blue-color)'} className="promo__icon" />,
       id: 1,
     },
     {
       title: t('promo.advantages2'),
-      icon: <TfiMedallAlt color={'var(--blue-color)'} size={30} />,
+      icon: <TfiMedallAlt color={'var(--blue-color)'} className="promo__icon" />,
       id: 2,
     },
     {
       title: t('promo.advantages3'),
-      icon: <TfiThumbUp color={'var(--blue-color)'} size={30} />,
+      icon: <TfiThumbUp color={'var(--blue-color)'} className="promo__icon" />,
       id: 3,
     },
     {
       title: t('promo.advantages4'),
-      icon: <TfiBlackboard color={'var(--blue-color)'} size={30} />,
+      icon: <TfiBlackboard color={'var(--blue-color)'} className="promo__icon" />,
       id: 4,
     },
     {
       title: t('promo.advantages5'),
-      icon: <TfiBrushAlt color={'var(--blue-color)'} size={30} />,
+      icon: <TfiBrushAlt color={'var(--blue-color)'} className="promo__icon" />,
       id: 5,
     },
     {
       title: t('promo.advantages6'),
-      icon: <TfiShine color={'var(--blue-color)'} size={30} />,
+      icon: <TfiShine color={'var(--blue-color)'} className="promo__icon" />,
       id: 6,
     },
   ];
@@ -109,7 +109,6 @@ export const HomePage = () => {
               <Trans>
                 <h1 className="home__title">{t('home.title')}</h1>
               </Trans>
-              <i>{t('home.descr')}</i>
               <HashLink smooth to="/#products" className="classic">
                 {t('home.btn')}
               </HashLink>

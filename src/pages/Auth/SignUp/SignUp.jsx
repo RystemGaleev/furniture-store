@@ -115,7 +115,7 @@ export const SignUp = () => {
                     }
                   />
                 </div>
-                <div className={style.error}>{error}</div>
+                {error.length > 0 ? <div className={style.error}>{error}</div> : null}
                 <button className={style.submit}>{t('auth.registr')}</button>
 
                 <div className={style.descr}>
@@ -123,10 +123,6 @@ export const SignUp = () => {
                 </div>
               </div>
             </form>
-            <div className={style.textBlock}>
-              <div className={style.text}>{t('auth.title')} </div>
-              <div className={style.textSm}>{t('auth.subtitle')} </div>
-            </div>
           </div>
         </div>
       </div>
