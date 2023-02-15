@@ -54,6 +54,10 @@
   "favourites": {
     "title": "Favourites"
   },
+  "notfound": {
+    "title": "I couldn't find such a page, don't worry, there are other interesting pages here",
+    "btn": "Home page"
+  },
   "cart": {
     "title": "Shopping Cart",
     "priceList": "Price list",

@@ -4,8 +4,8 @@ export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async (_, thunkAPI) => {
     try {
-      const response = await fetch(`http://localhost:3001/furniture`).then((data) =>
-        data.json(),
+      const response = await fetch(`${process.env.REACT_APP_API}/furniture`).then(
+        (data) => data.json(),
       );
       return response;
     } catch (error) {

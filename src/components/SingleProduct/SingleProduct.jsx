@@ -22,10 +22,11 @@ export const SingleProduct = () => {
   let { id } = useParams();
 
   const { reviews } = useSelector((state) => state.reviews);
+
   useEffect(() => {
     const fetchProduct = async () => {
-      const data = await fetch(`http://localhost:3001/furniture/${id}`).then((res) =>
-        res.json(),
+      const data = await fetch(`${process.env.REACT_APP_API}/furniture/${id}`).then(
+        (res) => res.json(),
       );
       setSingleProduct(data);
     };
@@ -33,7 +34,6 @@ export const SingleProduct = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(singleProduct);
   const currentReview = reviews.filter((rev) => rev.id === id);
 
   const AddedInCart = () => {

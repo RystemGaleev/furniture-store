@@ -16,7 +16,7 @@ import style from './ProductCard.module.scss';
 import { forwardRef } from 'react';
 
 export const ProductCard = forwardRef(
-  ({ img, id, price, old, title, collection, rating }, ref) => {
+  ({ img, id, price, old, title, collection }, ref) => {
     const { t } = useTranslation();
 
     const dispatch = useDispatch();

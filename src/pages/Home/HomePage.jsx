@@ -33,8 +33,6 @@ export const HomePage = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  // const { user } = useContext(AuthContext);
-
   const { products } = useSelector((state) => state.products);
   const [searchValue, setSearchValue] = useState('');
 
