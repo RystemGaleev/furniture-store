@@ -90,12 +90,9 @@
     display: none;
   }
 }
-@include lg {
-}
+
 @include md {
   .nav {
     display: none;
   }
-}
-@include sm {
 }

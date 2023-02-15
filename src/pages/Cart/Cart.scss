@@ -89,7 +89,7 @@
       border: none;
       &:disabled {
         background-color: gray;
-        cursor: not-allowed;
+        pointer-events: none;
       }
 
       &:hover {
@@ -114,6 +114,10 @@
       background-color: rgb(252, 62, 62);
       color: var(--white-color);
       cursor: pointer;
+      &:disabled {
+        background-color: gray;
+        pointer-events: none;
+      }
     }
   }
 }

@@ -1,3 +1,5 @@
+@import '../../assets/scss/mixin.scss';
+
 .empty {
   display: flex;
   align-items: center;
@@ -5,6 +7,7 @@
   flex-direction: column;
   gap: 30px;
   color: var(--detail-color);
+  text-align: center;
 }
 .icon {
   width: 30px;
@@ -31,4 +34,17 @@
   border: 1px solid var(--detail-color);
   color: var(--detail-color);
   cursor: pointer;
+  border-radius: 6px;
+}
+
+@include sm {
+  .empty {
+    gap: 20px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .descr {
+    font-size: 14px;
+  }
 }

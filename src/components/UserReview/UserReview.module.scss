@@ -1,3 +1,5 @@
+@import '../../assets/scss/mixin';
+
 .review {
   display: flex;
   gap: 30px;
@@ -6,11 +8,15 @@
   padding: 12px 20px;
   border: 1px solid var(--blue-color);
   border-radius: 6px;
+  max-height: 300px;
+  min-height: 100px;
+  overflow-y: auto;
 }
 .text {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex: 1;
 }
 .icon {
   color: var(--white-color);
@@ -31,5 +37,4 @@
   font-size: 18px;
   font-weight: 500;
   word-break: break-all;
-  max-width: 380px;
 }

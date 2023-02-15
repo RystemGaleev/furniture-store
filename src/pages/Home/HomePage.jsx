@@ -1,13 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../redux/ProductSlice';
 import { HashLink } from 'react-router-hash-link';
-import { AuthContext } from '../../context/AuthContext';
-import { ModalContext } from '../../context/ModalContext';
 
 import { Layout } from '../../Layout/Layout';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
-import CustomModal from '../../components/CustomModal/CustomModal';
 import { Search } from '../../components/Search/Search';
 import { Slider } from '../../components/Slider/Slider';
 import { AdvantagesCard } from '../../components/AdvantagesCard/AdvantagesCard';
@@ -29,8 +26,7 @@ export const HomePage = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  const { user } = useContext(AuthContext);
-  const { modalOpen, setModalOpen } = useContext(ModalContext);
+  // const { user } = useContext(AuthContext);
 
   const { products } = useSelector((state) => state.products);
   const [searchValue, setSearchValue] = useState('');
@@ -86,24 +82,6 @@ export const HomePage = () => {
       >
         <div className="container">
           <div className="home__wrapper">
-            <CustomModal
-              isOpen={modalOpen.welcomeModal}
-              handleClose={() => setModalOpen({ ...modalOpen, welcomeModal: false })}
-              color={'transparent'}
-              style={{
-                minWidth: '340px',
-                left: '50%',
-                top: '50%',
-                height: '70px',
-                transform: 'translate(-50%, -50%)',
-                backgroundColor: 'var(--blue-color)',
-              }}
-            >
-              <div className="popup__title">
-                {t('home.welcome')} {user.displayName}
-              </div>
-            </CustomModal>
-
             <div className="home__block">
               <div className="subtitle">INTERIOR</div>
               <Trans>

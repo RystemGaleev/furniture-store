@@ -1,78 +1,52 @@
 import { useForm } from 'react-hook-form';
-import CustomModal from '../CustomModal/CustomModal';
-
 import { TfiHeart } from 'react-icons/tfi';
 import style from './FormOrder.module.scss';
-import { useContext } from 'react';
-import { ModalContext } from '../../context/ModalContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart } from '../../redux/CartSlice';
 import { addToOrders } from '../../redux/OrderSlice';
 import { useTranslation } from 'react-i18next';
 
-export const FormOrder = ({ setModalOpenForm }) => {
+export const FormOrder = ({ toggleModal }) => {
   const { t } = useTranslation();
-  const { modalOpen, setModalOpen } = useContext(ModalContext);
   const { cart } = useSelector((state) => state.cart);
-  const { orders } = useSelector((state) => state.orders);
 
   const dispatch = useDispatch();
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitted },
     reset,
   } = useForm({
     mode: 'onChange',
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = () => {
     reset();
-    setModalOpen({ ...modalOpen, thanksModal: true });
     startTimer();
-
     dispatch(addToOrders(cart));
     dispatch(clearCart());
   };
 
   const startTimer = () => {
     const timer = setTimeout(() => {
-      setModalOpen({ ...modalOpen, thanksModal: false });
-
-      setModalOpenForm();
-    }, 4000);
+      toggleModal();
+    }, 5000);
     return () => clearTimeout(timer);
   };
 
   return (
     <>
-      <CustomModal
-        isOpen={modalOpen.thanksModal}
-        handleClose={() => setModalOpen({ ...modalOpen, thanksModal: false })}
-        style={{
-          width: '500px',
-          left: '50%',
-          top: '50%',
-          height: '220px',
-          transform: 'translate(-50%, -50%)',
-          color: 'white',
-        }}
-      >
-        <div className="popup__title">
-          Thanks for the purchase <TfiHeart className="popup__icon" size={30} />
+      {isSubmitted ? (
+        <div className={style.thanks}>
+          <TfiHeart size={30} className={style.thanks_icon} />
+          <div className={style.thanks_title}>{t('modal.titleThanks')}</div>
+          <div className={style.thanks_descr}>{t('modal.descrThanks')}</div>
         </div>
-        <div className="popup__descr">
-          You can view your purchases on the page "My orders"
-        </div>
-      </CustomModal>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className={modalOpen.thanksModal ? style.formOpacity : style.form}
-      >
-        <div className={style.title}>{t('form.title')}</div>
-        <div className={style.wrapper}>
-          <div className={style.column}>
+      ) : (
+        <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
+          <div className={style.title}>{t('form.title')}</div>
+          <div className={style.wrapper}>
             <div className={style.inputBlock}>
               <label htmlFor="CardNumber">{t('form.card')}</label>
               <input
@@ -94,7 +68,7 @@ export const FormOrder = ({ setModalOpenForm }) => {
                 </p>
               )}
             </div>
-            <div className={style.blockLeft}>
+            <div className={style.input_group}>
               <div className={style.inputBlock}>
                 <label htmlFor="Expiration Date">{t('form.date')}</label>
                 <input
@@ -145,94 +119,8 @@ export const FormOrder = ({ setModalOpenForm }) => {
               <div className={style.descr}>{t('form.policy')}</div>
             </div>
           </div>
-          <div className={style.columnRight}>
-            <div className={style.block}>
-              <div className={style.inputBlock}>
-                <label htmlFor="Сountry">{t('form.country')}</label>
-                <input
-                  className={errors.Сountry ? style.inputSmallError : style.inputSmall}
-                  type="text"
-                  name="Сountry"
-                  step="0.01"
-                  placeholder={t('form.countryPl')}
-                  {...register('Сountry', {
-                    required: 'The field must be filled in',
-                    minLength: 3,
-                    maxLength: 20,
-                  })}
-                />
-                {errors?.Сountry && (
-                  <p className={style.errorText}>
-                    {errors?.Сountry?.message || t('form.countryErr')}
-                  </p>
-                )}
-              </div>
-            </div>
-            <div className={style.inputBlock}>
-              <label htmlFor="City">{t('form.city')}</label>
-              <input
-                className={errors.City ? style.inputSmallError : style.inputSmall}
-                type="text"
-                name="City"
-                step="0.01"
-                placeholder={t('form.cityPl')}
-                {...register('City', {
-                  required: 'The field must be filled in',
-                  minLength: 3,
-                  maxLength: 20,
-                })}
-              />
-              {errors?.City && (
-                <p className={style.errorText}>
-                  {errors?.City?.message || t('form.cityErr')}
-                </p>
-              )}
-            </div>
-
-            <div className={style.block}>
-              <div className={style.inputBlock}>
-                <label htmlFor="Street">{t('form.street')}</label>
-                <input
-                  className={errors.Street ? style.inputSmallError : style.inputSmall}
-                  type="text"
-                  name="Street"
-                  step="0.01"
-                  placeholder={t('form.streetPl')}
-                  {...register('Street', {
-                    required: 'The field must be filled in',
-                    minLength: 3,
-                    maxLength: 20,
-                  })}
-                />
-                {errors?.Street && (
-                  <p className={style.errorText}>
-                    {errors?.Street?.message || t('form.streetErr')}
-                  </p>
-                )}
-              </div>
-              <div className={style.inputBlock}>
-                <label htmlFor="Apartment">{t('form.apartment')}</label>
-                <input
-                  className={errors.Apartment ? style.inputSmallError : style.inputSmall}
-                  type="number"
-                  name="Apartment"
-                  step="0.01"
-                  placeholder={t('form.apartmentPl')}
-                  {...register('Apartment', {
-                    required: 'The field must be filled in',
-                    maxLength: 5,
-                  })}
-                />
-                {errors?.Apartment && (
-                  <p className={style.errorText}>
-                    {errors?.Apartment?.message || t('form.apartmentErr')}
-                  </p>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
+        </form>
+      )}
     </>
   );
 };

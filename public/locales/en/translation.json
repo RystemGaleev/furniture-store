@@ -72,6 +72,10 @@
   "orders": {
     "title": "My purchases"
   },
+  "modal": {
+    "titleThanks": "Thanks for the purchase ",
+    "descrThanks": "You can view your purchases on the page 'My orders'"
+  },
   "form": {
     "title": "Payment",
     "card": "Card Number",

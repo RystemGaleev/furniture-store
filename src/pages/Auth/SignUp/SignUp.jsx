@@ -5,7 +5,6 @@ import { updateProfile } from 'firebase/auth';
 import { AuthContext } from '../../../context/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 
-import { ModalContext } from '../../../context/ModalContext';
 import { Layout } from '../../../Layout/Layout';
 import { InputControl } from '../../../components/InputControl/InputControl';
 
@@ -14,8 +13,6 @@ import style from './SignUp.module.scss';
 
 export const SignUp = () => {
   const { t } = useTranslation();
-
-  const { modalOpen, setModalOpen } = useContext(ModalContext);
 
   const navigate = useNavigate();
   const [error, setError] = useState('');
@@ -58,15 +55,6 @@ export const SignUp = () => {
       });
       navigate('/');
       logged();
-
-      const startTimer = () => {
-        const timer = setTimeout(() => {
-          setModalOpen({ ...modalOpen, welcomeModal: false });
-        }, 3000);
-        return () => clearTimeout(timer);
-      };
-      startTimer();
-      setModalOpen({ ...modalOpen, welcomeModal: true });
     } catch (error) {
       catchAuthError(error, setError);
     }

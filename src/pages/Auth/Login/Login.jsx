@@ -2,7 +2,6 @@ import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthContext';
 import { catchAuthError } from '../../../utils';
-import { ModalContext } from '../../../context/ModalContext';
 
 import { InputControl } from '../../../components/InputControl/InputControl';
 import { Layout } from '../../../Layout/Layout';
@@ -12,7 +11,6 @@ import style from './Login.module.scss';
 
 export const Login = () => {
   const { t } = useTranslation();
-  const { modalOpen, setModalOpen } = useContext(ModalContext);
   const navigate = useNavigate();
   const [error, setError] = useState('');
   const [values, setValues] = useState({
@@ -34,14 +32,6 @@ export const Login = () => {
     try {
       await signIn(values.email, values.password);
       navigate('/');
-      const startTimer = () => {
-        const timer = setTimeout(() => {
-          setModalOpen({ ...modalOpen, welcomeModal: false });
-        }, 3000);
-        return () => clearTimeout(timer);
-      };
-      startTimer();
-      setModalOpen({ ...modalOpen, welcomeModal: true });
     } catch (error) {
       catchAuthError(error, setError, t);
     }

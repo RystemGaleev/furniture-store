@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useContext } from 'react';
-import { ModalContext } from '../../context/ModalContext';
+import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
 import { Layout } from '../../Layout/Layout';
@@ -20,15 +19,15 @@ import { useTranslation, Trans } from 'react-i18next';
 import './Cart.scss';
 
 export const CartPage = () => {
-  const { t } = useTranslation();
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { cart } = useSelector((state) => state.cart);
+  const [isShowModal, setShowModal] = useState(false);
+
   const totalQuantity = getTotal(cart).totalQuantity;
   const price = Math.round(getTotal(cart).totalPrice);
   const discount = Math.round(price * 0.15);
   const totalPrice = Math.round(price - discount);
-
-  const { modalOpen, setModalOpen } = useContext(ModalContext);
 
   const removeAllItem = () => {
     toast.error(t('notification.removeAll'), {
@@ -36,6 +35,9 @@ export const CartPage = () => {
       icon: <TfiShoppingCart size={30} color={'#e74c3c'} />,
     });
     dispatch(clearCart());
+  };
+  const toggleModal = () => {
+    setShowModal((prev) => !prev);
   };
 
   return (
@@ -49,22 +51,8 @@ export const CartPage = () => {
         limit={7}
         closeButton={false}
       />
-      <CustomModal
-        isOpen={modalOpen.formModal}
-        handleClose={() => setModalOpen({ ...modalOpen, formModal: false })}
-        style={{
-          maxWidth: '1000px',
-          left: '50%',
-          top: '50%',
-          minHeight: '650px',
-          backgroundColor: '#fff',
-          transform: 'translate(-50%, -50%)',
-          color: '#1e1e1e',
-        }}
-      >
-        <FormOrder
-          setModalOpenForm={() => setModalOpen({ ...modalOpen, formModal: false })}
-        />
+      <CustomModal isOpen={isShowModal} close handleClose={toggleModal}>
+        <FormOrder toggleModal={toggleModal} />
       </CustomModal>
 
       <motion.section
@@ -118,14 +106,18 @@ export const CartPage = () => {
                 </div>
                 <div className="cart__checkout-btns">
                   <button
-                    onClick={() => setModalOpen({ ...modalOpen, formModal: true })}
+                    onClick={toggleModal}
                     className="cart__checkout-buy"
                     disabled={cart.length < 1}
                   >
                     {t('cart.orderBtn')}
                     <AiOutlineCheck className="icon" size={22} />
                   </button>
-                  <button onClick={removeAllItem} className="cart__checkout-remove">
+                  <button
+                    onClick={removeAllItem}
+                    className="cart__checkout-remove"
+                    disabled={cart.length < 1}
+                  >
                     {t('cart.clearBtn')}
                     <AiOutlineClose className="icon" size={22} />
                   </button>
