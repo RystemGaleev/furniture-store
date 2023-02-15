@@ -4,6 +4,7 @@
   background: url('../../../public/image/background.jpg') center center/cover no-repeat;
   height: 100vh;
   padding-top: 180px;
+  overflow-x: hidden;
 
   &__block {
     max-width: 800px;
@@ -29,15 +30,15 @@
 }
 
 .products {
-  margin: 100px 0;
+  overflow-x: hidden;
+  padding: 100px 0;
   min-height: 100vh;
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     gap: 30px;
-    margin: 80px 0 120px;
+    margin-top: 100px;
   }
   &__block {
     display: flex;
@@ -47,6 +48,7 @@
 }
 
 .promo {
+  overflow-x: hidden;
   min-height: 900px;
   padding-top: 100px;
   &__wrapper {

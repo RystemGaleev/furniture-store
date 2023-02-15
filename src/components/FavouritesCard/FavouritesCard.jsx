@@ -6,14 +6,14 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import { IoEnterOutline } from 'react-icons/io5';
 import { IconUi } from '../ui/IconUi';
-import { frameAnimationX } from '../../Animations/Animation';
 import { motion } from 'framer-motion';
 
 import { TfiHeart } from 'react-icons/tfi';
 import { useTranslation } from 'react-i18next';
 import style from './FavouritesCard.module.scss';
+import { forwardRef } from 'react';
 
-export const FavouritesCard = ({ price, title, id, img, old }) => {
+export const FavouritesCard = forwardRef(({ price, title, id, img, old }, ref) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -33,13 +33,7 @@ export const FavouritesCard = ({ price, title, id, img, old }) => {
   };
 
   return (
-    <motion.div
-      variants={frameAnimationX}
-      initial="hidden"
-      animate="visible"
-      transition={{ duration: 0.4, delay: 0.3 }}
-      className={style.card}
-    >
+    <motion.div ref={ref} className={style.card}>
       <ToastContainer
         closeOnClick={false}
         pauseOnFocusLoss={false}
@@ -75,4 +69,6 @@ export const FavouritesCard = ({ price, title, id, img, old }) => {
       </div>
     </motion.div>
   );
-};
+});
+
+export const MotionFavouritesCard = motion(FavouritesCard);

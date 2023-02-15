@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
 import { Layout } from '../../Layout/Layout';
-import { BasketCard } from '../../components/BasketCard/BasketCard';
+import { MotionBasketCard } from '../../components/BasketCard/BasketCard';
 import { clearCart } from '../../redux/CartSlice';
 import CustomModal from '../../components/CustomModal/CustomModal';
 import { InformationBlock } from '../../components/InformationBlock/InformationBlock';
@@ -12,7 +12,13 @@ import { FormOrder } from '../../components/FormOrder/FormOrder';
 import { AiOutlineCheck, AiOutlineClose } from 'react-icons/ai';
 import { getTotal } from '../../utils';
 
-import { frameAnimationY, textAnimation } from '../../Animations/Animation';
+import {
+  AnimationContainerLong,
+  AnimationLeftX,
+  AnimationPage,
+  AnimationTopY,
+  PageTranstition,
+} from '../../Animations/Animation';
 import { motion } from 'framer-motion';
 import { TfiShoppingCart } from 'react-icons/tfi';
 import { useTranslation, Trans } from 'react-i18next';
@@ -57,33 +63,51 @@ export const CartPage = () => {
 
       <motion.section
         className="cart"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1, transition: { duration: 0.4 } }}
-        exit={{ scale: 0, opacity: 0 }}
+        initial="exit"
+        animate="show"
+        exit="exit"
+        transition={PageTranstition}
+        variants={AnimationPage}
       >
         <div className="container">
           <motion.h2
-            variants={textAnimation}
+            variants={AnimationLeftX}
             initial="hidden"
-            animate="visible"
+            whileInView={'show'}
+            transition={{ duration: 0.5 }}
             className="title__h2"
           >
             {t('cart.title')}
           </motion.h2>
-          <div className="cart__wrapper">
-            <div className="cart__items">
+          <motion.div
+            variants={AnimationContainerLong}
+            initial="hidden"
+            whileInView={'show'}
+            viewport={{ once: true }}
+            className="cart__wrapper"
+          >
+            <motion.div className="cart__items">
               {cart.length > 0 ? (
-                cart?.map((card) => <BasketCard key={card.id} {...card} />)
+                cart?.map((card, index) => (
+                  <MotionBasketCard
+                    variants={AnimationTopY}
+                    custom={index}
+                    key={card.id}
+                    {...card}
+                  />
+                ))
               ) : (
                 <InformationBlock />
               )}
-            </div>
+            </motion.div>
 
             <motion.div
-              className="cart__information"
-              variants={frameAnimationY}
               initial="hidden"
-              whileInView="visible"
+              whileInView={'show'}
+              viewport={{ once: true }}
+              variants={AnimationTopY}
+              transition={{ delay: 1 }}
+              className="cart__information"
             >
               <div className="cart__information-block">
                 <div className="cart__information-title"> {t('cart.priceList')}</div>
@@ -124,7 +148,7 @@ export const CartPage = () => {
                 </div>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </motion.section>
     </Layout>

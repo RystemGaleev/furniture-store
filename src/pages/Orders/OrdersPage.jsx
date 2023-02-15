@@ -1,6 +1,11 @@
 import { useSelector } from 'react-redux';
-import { textAnimation } from '../../Animations/Animation';
-import { OrderCard } from '../../components/OrderCard/OrderCard';
+import {
+  AnimationContainer,
+  AnimationLeftX,
+  AnimationPage,
+  PageTranstition,
+} from '../../Animations/Animation';
+import { MotionOrderCard } from '../../components/OrderCard/OrderCard';
 import { Layout } from '../../Layout/Layout';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -13,23 +18,42 @@ export const OrdersPage = () => {
 
   return (
     <Layout>
-      <section className="orders">
+      <motion.section
+        initial="exit"
+        animate="show"
+        exit="exit"
+        transition={PageTranstition}
+        variants={AnimationPage}
+        className="orders"
+      >
         <div className="container">
           <motion.h2
-            variants={textAnimation}
+            variants={AnimationLeftX}
             initial="hidden"
-            whileInView="visible"
+            whileInView={'show'}
+            transition={{ duration: 0.5 }}
             className="title__h2"
           >
             {t('orders.title')}
           </motion.h2>
-          <div className="orders__wrapper">
+          <motion.div
+            className="orders__wrapper"
+            variants={AnimationContainer}
+            initial="hidden"
+            whileInView={'show'}
+            viewport={{ once: true }}
+          >
             {orders?.map((item, index) => (
-              <OrderCard key={index} {...item} />
+              <MotionOrderCard
+                variants={AnimationLeftX}
+                custom={index}
+                key={index}
+                {...item}
+              />
             ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </Layout>
   );
 };

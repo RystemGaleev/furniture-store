@@ -5,8 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { IoEnterOutline } from 'react-icons/io5';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import { forwardRef } from 'react';
 
-export const OrderCard = ({ img, id, price, old, title, quantity }) => {
+export const OrderCard = forwardRef(({ img, id, price, old, title, quantity }, ref) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -16,7 +18,7 @@ export const OrderCard = ({ img, id, price, old, title, quantity }) => {
     navigate(`/product/${id}`);
   };
   return (
-    <div className={style.card}>
+    <motion.div ref={ref} className={style.card}>
       <ToastContainer
         closeOnClick={false}
         pauseOnFocusLoss={false}
@@ -47,6 +49,8 @@ export const OrderCard = ({ img, id, price, old, title, quantity }) => {
           <div className={style.price}>${price}</div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
-};
+});
+
+export const MotionOrderCard = motion(OrderCard);

@@ -4,13 +4,20 @@ import { fetchProducts } from '../../redux/ProductSlice';
 import { HashLink } from 'react-router-hash-link';
 
 import { Layout } from '../../Layout/Layout';
-import { ProductCard } from '../../components/ProductCard/ProductCard';
+import { MotionProductCard } from '../../components/ProductCard/ProductCard';
 import { Search } from '../../components/Search/Search';
 import { Slider } from '../../components/Slider/Slider';
-import { AdvantagesCard } from '../../components/AdvantagesCard/AdvantagesCard';
+import { MotionAdvantagesCard } from '../../components/AdvantagesCard/AdvantagesCard';
 
 import { motion } from 'framer-motion';
-import { textAnimation } from '../../Animations/Animation';
+import {
+  AnimationContainer,
+  AnimationPage,
+  AnimationCardLeft,
+  AnimationCardRight,
+  PageTranstition,
+  AnimationLeftX,
+} from '../../Animations/Animation';
 import { Trans, useTranslation } from 'react-i18next';
 import {
   TfiPaintRoller,
@@ -76,9 +83,11 @@ export const HomePage = () => {
     <Layout>
       <motion.section
         className="home"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1, transition: { duration: 0.4 } }}
-        exit={{ scale: 0, opacity: 0 }}
+        initial="exit"
+        animate="show"
+        exit="exit"
+        transition={PageTranstition}
+        variants={AnimationPage}
       >
         <div className="container">
           <div className="home__wrapper">
@@ -98,21 +107,32 @@ export const HomePage = () => {
       <section className="promo">
         <div className="container">
           <motion.h2
-            variants={textAnimation}
+            variants={AnimationLeftX}
             initial="hidden"
-            whileInView="visible"
-            transition={{ duration: 0.3, delay: 0.2 }}
+            whileInView={'show'}
+            transition={{ duration: 0.5 }}
             className="title__h2"
           >
             {t('promo.title')}
           </motion.h2>
           <div className="promo__wrapper">
             <Slider />
-            <div className="promo__advantages">
-              {advantages.map((item) => (
-                <AdvantagesCard key={item.id} {...item} />
+            <motion.div
+              className="promo__advantages"
+              variants={AnimationContainer}
+              initial="hidden"
+              whileInView={'show'}
+              viewport={{ once: true }}
+            >
+              {advantages.map((item, index) => (
+                <MotionAdvantagesCard
+                  variants={index % 2 === 0 ? AnimationCardLeft : AnimationCardRight}
+                  custom={index}
+                  key={item.id}
+                  {...item}
+                />
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -121,21 +141,32 @@ export const HomePage = () => {
         <div className="container">
           <div className="products__block">
             <motion.h2
-              variants={textAnimation}
+              variants={AnimationLeftX}
               initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.3, delay: 0.2 }}
+              whileInView={'show'}
+              transition={{ duration: 0.5 }}
               className="title__h2"
             >
               {t('products.title')}
             </motion.h2>
             <Search setSearchValue={setSearchValue} searchValue={searchValue} />
           </div>
-          <div className="products__wrapper">
-            {filterProducts.map((item) => (
-              <ProductCard key={item.id} {...item} />
+          <motion.div
+            className="products__wrapper"
+            variants={AnimationContainer}
+            initial="hidden"
+            whileInView={'show'}
+            viewport={{ once: true }}
+          >
+            {filterProducts.map((item, index) => (
+              <MotionProductCard
+                variants={AnimationLeftX}
+                custom={index}
+                key={item.id}
+                {...item}
+              />
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
     </Layout>

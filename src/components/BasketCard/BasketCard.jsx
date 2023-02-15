@@ -6,10 +6,10 @@ import { removeInCart, decrementProduct, incrementProduct } from '../../redux/Ca
 import { TfiShoppingCart } from 'react-icons/tfi';
 import { ToastContainer, toast } from 'react-toastify';
 import { motion } from 'framer-motion';
-import { frameAnimationX } from '../../Animations/Animation';
 import { useTranslation } from 'react-i18next';
+import { forwardRef } from 'react';
 
-export const BasketCard = ({ id, price, img, title, quantity }) => {
+export const BasketCard = forwardRef(({ id, price, img, title, quantity }, ref) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
@@ -22,13 +22,7 @@ export const BasketCard = ({ id, price, img, title, quantity }) => {
   };
 
   return (
-    <motion.div
-      className={style.item}
-      variants={frameAnimationX}
-      initial="hidden"
-      animate="visible"
-      transition={{ duration: 0.4, delay: 0.3 }}
-    >
+    <motion.div ref={ref} className={style.item}>
       <div className={style.img}>
         <img src={img} alt={`product${id}`} />
       </div>
@@ -73,4 +67,6 @@ export const BasketCard = ({ id, price, img, title, quantity }) => {
       </div>
     </motion.div>
   );
-};
+});
+
+export const MotionBasketCard = motion(BasketCard);
