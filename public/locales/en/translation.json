@@ -130,6 +130,6 @@
     "require": "All fields are required",
     "passLength": "The password must contain more than 8 characters",
     "passCorrect": "Enter the correct password",
-    "userUndefined": "There is no such user4555555555"
+    "userUndefined": "There is no such user"
   }
 }
