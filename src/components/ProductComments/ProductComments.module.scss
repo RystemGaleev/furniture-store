@@ -16,6 +16,7 @@
     font-size: 22px;
     font-weight: 600;
     color: var(--detail-color);
+    text-align: center;
   }
 }
 .reviews {
@@ -26,8 +27,11 @@
   font-weight: 600;
   color: var(--detail-color);
   overflow: scroll;
-  max-height: 500px;
-  max-width: 490px;
+  max-height: 420px;
+  width: 500px;
+  border: 1px solid var(--blue-color);
+  padding: 16px 14px;
+  border-radius: 6px;
   &::-webkit-scrollbar {
     display: none;
   }

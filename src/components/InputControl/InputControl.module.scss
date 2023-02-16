@@ -4,9 +4,9 @@
   gap: 10px;
 
   label {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
-    color: #1e1e1e;
+    color: var(--black-color);
   }
   .input {
     height: 50px;
@@ -14,10 +14,13 @@
     padding: 12px 0;
     outline: none;
     border: none;
-    border-bottom: 2px solid #1e1e1e;
+    border-bottom: 2px solid var(--black-color);
     font-size: 18px;
-    color: #1e1e1e;
+    color: var(--black-color);
     background-color: transparent;
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.7);
+    }
 
     &:focus {
       border-bottom: 2px solid var(--blue-color);
